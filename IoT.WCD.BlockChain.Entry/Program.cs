@@ -12,8 +12,8 @@ namespace IoT.WCD.BlockChain.Entry
         private static readonly byte[] ProofOfWorkDifficulty = { 0x00, 0x00 };
         static void Main()
         {
-            var chain = new Entities.Impl.BlockChain(ProofOfWorkDifficulty, GenesisBlock);
-            // ** start mining 20 blocks in a loop **/
+            IBlockChain chain = new Entities.Impl.BlockChain(ProofOfWorkDifficulty, GenesisBlock);
+            //start mining 20 blocks in a loop
             for (var i = 0; i < 20; i++)
             {
                 var data = Enumerable.Range(0, 256).Select(x => (byte)RandomGenerator.Next());

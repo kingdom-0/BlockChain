@@ -6,7 +6,7 @@ using IoT.WCD.BlockChain.Entities.Interfaces;
 
 namespace IoT.WCD.BlockChain.Entities.Impl
 {
-    public class BlockChain : IEnumerable<IBlock>, IBlockChain
+    public class BlockChain : IBlockChain
     {
         private List<IBlock> _blocks = new List<IBlock>();
 
@@ -24,12 +24,12 @@ namespace IoT.WCD.BlockChain.Entities.Impl
             set => _blocks = value;
         }
 
-        public byte[] Difficulty { get; }
+        public byte[] ProofOfWorkDifficulty { get; }
 
-        public BlockChain(byte[] difficulty, IBlock genesisBlock)
+        public BlockChain(byte[] proofOfWorkDifficulty, IBlock genesisBlock)
         {
-            Difficulty = difficulty;
-            genesisBlock.Hash = genesisBlock.MineHash(Difficulty);
+            ProofOfWorkDifficulty = proofOfWorkDifficulty;
+            genesisBlock.Hash = genesisBlock.MineHash(ProofOfWorkDifficulty);
             Blocks.Add(genesisBlock);
         }
 
@@ -40,7 +40,7 @@ namespace IoT.WCD.BlockChain.Entities.Impl
                 block.PreviousHash = _blocks.LastOrDefault()?.Hash;
             }
 
-            block.Hash = block.MineHash(Difficulty);
+            block.Hash = block.MineHash(ProofOfWorkDifficulty);
             Blocks.Add(block);
         }
 

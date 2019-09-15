@@ -21,7 +21,6 @@ namespace IoT.WCD.BlockChain.Entities.Impl
         public byte[] PreviousHash { get; set; }
         public DateTime Timestamp { get; }
 
-
         public byte[] GenerateHash()
         {
             var sha512 = new SHA256Managed();
