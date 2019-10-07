@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E09770BD-946E-4529-8AA7-C1F301D1C6A4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>IoT.WCD.BlockChain.DTOs</RootNamespace>
-    <AssemblyName>IoT.WCD.BlockChain.DTOs</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IoT.WCD.BlockChain.Application.DTOs</RootNamespace>
+    <AssemblyName>IoT.WCD.BlockChain.Application.DTOs</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PersonalDataUploadDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IoT.WCD.BlockChain.Domain.DomainServices
+namespace IoT.WCD.BlockChain.ValueObjects
 {
-    class Program
+    public class User
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

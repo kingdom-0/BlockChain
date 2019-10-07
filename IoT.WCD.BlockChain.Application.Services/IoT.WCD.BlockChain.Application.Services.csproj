@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0AB0792D-6A18-40B1-8571-2120BFED0653}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>IoT.WCD.BlockChain.Application.Services</RootNamespace>
     <AssemblyName>IoT.WCD.BlockChain.Application.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,11 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PersonalDataUploadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.DTOs\IoT.WCD.BlockChain.Application.DTOs.csproj">
+      <Project>{E09770BD-946E-4529-8AA7-C1F301D1C6A4}</Project>
+      <Name>IoT.WCD.BlockChain.Application.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj">
+      <Project>{B8ADD744-A84A-4662-9FF9-987032EB06C3}</Project>
+      <Name>IoT.WCD.BlockChain.Application.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

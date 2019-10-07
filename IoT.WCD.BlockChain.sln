@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Entry", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test", "IoT.WCD.BlockChain.Test\IoT.WCD.BlockChain.Test.csproj", "{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.DTOs", "IoT.WCD.BlockChain.DTOs\IoT.WCD.BlockChain.DTOs.csproj", "{E09770BD-946E-4529-8AA7-C1F301D1C6A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.DTOs", "IoT.WCD.BlockChain.Application.DTOs\IoT.WCD.BlockChain.Application.DTOs.csproj", "{E09770BD-946E-4529-8AA7-C1F301D1C6A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Interfaces", "IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj", "{B8ADD744-A84A-4662-9FF9-987032EB06C3}"
 EndProject
