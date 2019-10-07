@@ -9,6 +9,40 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Entry", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test", "IoT.WCD.BlockChain.Test\IoT.WCD.BlockChain.Test.csproj", "{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.DTOs", "IoT.WCD.BlockChain.DTOs\IoT.WCD.BlockChain.DTOs.csproj", "{E09770BD-946E-4529-8AA7-C1F301D1C6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Interfaces", "IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj", "{B8ADD744-A84A-4662-9FF9-987032EB06C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Services", "IoT.WCD.BlockChain.Application.Services\IoT.WCD.BlockChain.Application.Services.csproj", "{0AB0792D-6A18-40B1-8571-2120BFED0653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Domain", "IoT.WCD.BlockChain.Domain\IoT.WCD.BlockChain.Domain.csproj", "{49F8EFEC-84FB-484D-AE32-662B477D3638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Domain.DomainEvents", "IoT.WCD.BlockChain.Domain.DomainEvents\IoT.WCD.BlockChain.Domain.DomainEvents.csproj", "{3333E4D7-B531-4722-9300-B20CF921AEC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Domain.DomainServices", "IoT.WCD.BlockChain.Domain.DomainServices\IoT.WCD.BlockChain.Domain.DomainServices.csproj", "{7C788E25-0B1D-4D45-9B4E-1B8170218D37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.ValueObjects", "IoT.WCD.BlockChain.ValueObjects\IoT.WCD.BlockChain.ValueObjects.csproj", "{21CF2CB7-E8C4-45E8-99C6-1B38A961C71B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Repository.Interfaces", "IoT.WCD.BlockChain.Repository.Interfaces\IoT.WCD.BlockChain.Repository.Interfaces.csproj", "{AF12340E-AE30-493B-916F-6201AE7A15D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.BootStrapper", "IoT.WCD.BlockChain.BootStrapper\IoT.WCD.BlockChain.BootStrapper.csproj", "{236EA831-1121-443C-B2C7-1085C6BAB3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Infrastructure", "IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj", "{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Infrastructure.Interfaces", "IoT.WCD.BlockChain.Infrastructure.Interfaces\IoT.WCD.BlockChain.Infrastructure.Interfaces.csproj", "{10C1C8EE-4399-4CFC-876A-A152B7F3F340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Infrastructure.IoC.Contracts", "IoT.WCD.BlockChain.Infrastructure.IoC.Contracts\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts.csproj", "{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Repository", "IoT.WCD.BlockChain.Repository\IoT.WCD.BlockChain.Repository.csproj", "{15621B93-692A-40DA-B143-8B4C6E68CFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.ServiceAgent", "IoT.WCD.BlockChain.ServiceAgent\IoT.WCD.BlockChain.ServiceAgent.csproj", "{3568D751-A9F3-4177-BBE4-F3446986823A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test.Application", "IoT.WCD.BlockChain.Test.Application\IoT.WCD.BlockChain.Test.Application.csproj", "{26350A83-1751-4FEB-8F6C-2F37D412B2E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test.Domain", "IoT.WCD.BlockChain.Test.Domain\IoT.WCD.BlockChain.Test.Domain.csproj", "{22E797E4-DC62-431B-96BA-635EE0443E74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test.Repository", "IoT.WCD.BlockChain.Test.Repository\IoT.WCD.BlockChain.Test.Repository.csproj", "{168F855D-7BDF-4D7F-AEA1-973A004F11EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +61,74 @@ Global
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F8EFEC-84FB-484D-AE32-662B477D3638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F8EFEC-84FB-484D-AE32-662B477D3638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F8EFEC-84FB-484D-AE32-662B477D3638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F8EFEC-84FB-484D-AE32-662B477D3638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3333E4D7-B531-4722-9300-B20CF921AEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3333E4D7-B531-4722-9300-B20CF921AEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3333E4D7-B531-4722-9300-B20CF921AEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3333E4D7-B531-4722-9300-B20CF921AEC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C788E25-0B1D-4D45-9B4E-1B8170218D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C788E25-0B1D-4D45-9B4E-1B8170218D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C788E25-0B1D-4D45-9B4E-1B8170218D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C788E25-0B1D-4D45-9B4E-1B8170218D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CF2CB7-E8C4-45E8-99C6-1B38A961C71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CF2CB7-E8C4-45E8-99C6-1B38A961C71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CF2CB7-E8C4-45E8-99C6-1B38A961C71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CF2CB7-E8C4-45E8-99C6-1B38A961C71B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C1C8EE-4399-4CFC-876A-A152B7F3F340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C1C8EE-4399-4CFC-876A-A152B7F3F340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C1C8EE-4399-4CFC-876A-A152B7F3F340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C1C8EE-4399-4CFC-876A-A152B7F3F340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15621B93-692A-40DA-B143-8B4C6E68CFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15621B93-692A-40DA-B143-8B4C6E68CFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15621B93-692A-40DA-B143-8B4C6E68CFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15621B93-692A-40DA-B143-8B4C6E68CFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3568D751-A9F3-4177-BBE4-F3446986823A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3568D751-A9F3-4177-BBE4-F3446986823A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3568D751-A9F3-4177-BBE4-F3446986823A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3568D751-A9F3-4177-BBE4-F3446986823A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26350A83-1751-4FEB-8F6C-2F37D412B2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26350A83-1751-4FEB-8F6C-2F37D412B2E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26350A83-1751-4FEB-8F6C-2F37D412B2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26350A83-1751-4FEB-8F6C-2F37D412B2E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E797E4-DC62-431B-96BA-635EE0443E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E797E4-DC62-431B-96BA-635EE0443E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E797E4-DC62-431B-96BA-635EE0443E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E797E4-DC62-431B-96BA-635EE0443E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
