@@ -2,6 +2,6 @@
 {
     public class PersonalDataUploadEvent : IEvent
     {
-
+        public string Parameter { get; set; }
     }
 }

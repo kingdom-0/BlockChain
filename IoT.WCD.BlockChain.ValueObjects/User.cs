@@ -8,5 +8,13 @@ namespace IoT.WCD.BlockChain.ValueObjects
 {
     public class User
     {
+        public int Id { get; set; }
+
+        public string RealName { get; set; }
+
+        public string Alias { get; set; }
+
+        public DateTime? RegisterTime { get; set; }
+
     }
 }

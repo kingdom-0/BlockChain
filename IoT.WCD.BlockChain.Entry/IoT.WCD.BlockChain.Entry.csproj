@@ -50,9 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Entities\IoT.WCD.BlockChain.Entities.csproj">
       <Project>{af9d679c-da6f-4d12-a72e-82d3b668c2e8}</Project>
       <Name>IoT.WCD.BlockChain.Entities</Name>
