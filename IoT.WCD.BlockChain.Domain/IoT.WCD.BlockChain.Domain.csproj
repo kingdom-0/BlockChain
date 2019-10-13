@@ -58,6 +58,7 @@
     <Compile Include="AggregateRoot.cs" />
     <Compile Include="ApplyAggregateRoot.cs" />
     <Compile Include="Entity\UploadedPersonalData.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts.csproj">
       <Project>{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}</Project>
       <Name>IoT.WCD.BlockChain.Infrastructure.IoC.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
+      <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
+      <Name>IoT.WCD.BlockChain.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}</ProjectGuid>
+    <ProjectGuid>{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>IoT.WCD.BlockChain.Infrastructure.IoC.Contracts</RootNamespace>
-    <AssemblyName>IoT.WCD.BlockChain.Infrastructure.IoC.Contracts</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IoT.WCD.BlockChain.Application.CommandHandlers</RootNamespace>
+    <AssemblyName>IoT.WCD.BlockChain.Application.CommandHandlers</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,39 +30,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.11.1\lib\net46\Unity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Container">
-      <HintPath>..\packages\Unity.5.11.1\lib\net46\Unity.Container.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IocContainer.cs" />
+    <Compile Include="CommandHandlerFactory.cs" />
+    <Compile Include="CreateUserCommandHandler.cs" />
+    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="ICommandHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Messaging\IoT.WCD.BlockChain.Messaging.csproj">
-      <Project>{44DB99E9-AD7B-4399-90E8-637D305C0F8B}</Project>
-      <Name>IoT.WCD.BlockChain.Messaging</Name>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Commands\IoT.WCD.BlockChain.Application.Commands.csproj">
+      <Project>{0326144C-A895-4D81-B405-1954C1C4F5B1}</Project>
+      <Name>IoT.WCD.BlockChain.Application.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain.DomainServices\IoT.WCD.BlockChain.Domain.DomainServices.csproj">
+      <Project>{7C788E25-0B1D-4D45-9B4E-1B8170218D37}</Project>
+      <Name>IoT.WCD.BlockChain.Domain.DomainServices</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

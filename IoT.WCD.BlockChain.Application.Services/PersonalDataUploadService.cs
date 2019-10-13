@@ -9,7 +9,7 @@ namespace IoT.WCD.BlockChain.Application.Services
     {
         public Task<bool> Upload(PersonalDataUploadDto personalDataUploadDto)
         {
-            //TODO
+            //TODO, Send command
             throw new NotImplementedException();
         }
     }

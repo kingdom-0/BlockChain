@@ -1,18 +1,23 @@
-﻿using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using IoT.WCD.BlockChain.Application.CommandHandlers;
+using IoT.WCD.BlockChain.Application.Interfaces;
+using IoT.WCD.BlockChain.Application.Services;
+using IoT.WCD.BlockChain.Domain.DomainEvents;
+using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
+using IoT.WCD.BlockChain.Messaging;
 using Unity;
 
 namespace IoT.WCD.BlockChain.BootStrapper
 {
     public class Startup
     {
-        public static void Configure()
+        private readonly UnityContainer _register = IocContainer.Default;
+
+        public void Configure()
         {
-            UnityContainer register = IocContainer.Default;
+            _register.RegisterType<ICommandBus, CommandBus>();
+            _register.RegisterType<IEventBus, EventBus>();
+            _register.RegisterType<ICommandHandlerFactory, CommandHandlerFactory>();
+            _register.RegisterType<IPersonalDataUploadService, PersonalDataUploadService>();
         }
     }
 }

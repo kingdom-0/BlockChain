@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.ValueObj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Repository.Interfaces", "IoT.WCD.BlockChain.Repository.Interfaces\IoT.WCD.BlockChain.Repository.Interfaces.csproj", "{AF12340E-AE30-493B-916F-6201AE7A15D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.BootStrapper", "IoT.WCD.BlockChain.BootStrapper\IoT.WCD.BlockChain.BootStrapper.csproj", "{236EA831-1121-443C-B2C7-1085C6BAB3EA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Infrastructure", "IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj", "{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Infrastructure.Interfaces", "IoT.WCD.BlockChain.Infrastructure.Interfaces\IoT.WCD.BlockChain.Infrastructure.Interfaces.csproj", "{10C1C8EE-4399-4CFC-876A-A152B7F3F340}"
@@ -42,6 +40,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test.Domain", "IoT.WCD.BlockChain.Test.Domain\IoT.WCD.BlockChain.Test.Domain.csproj", "{22E797E4-DC62-431B-96BA-635EE0443E74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test.Repository", "IoT.WCD.BlockChain.Test.Repository\IoT.WCD.BlockChain.Test.Repository.csproj", "{168F855D-7BDF-4D7F-AEA1-973A004F11EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Presentation", "IoT.WCD.BlockChain.Presentation\IoT.WCD.BlockChain.Presentation.csproj", "{A194EF91-AD8B-43A7-9D1B-227C1D9D8DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.BootStrapper", "IoT.WCD.BlockChain.BootStrapper\IoT.WCD.BlockChain.BootStrapper.csproj", "{C10788CA-56B4-42AF-A821-6AE2CC266CE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Messaging", "IoT.WCD.BlockChain.Messaging\IoT.WCD.BlockChain.Messaging.csproj", "{6A701192-C82C-440D-B1E4-BB7EC60427D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Domain.Factory", "IoT.WCD.BlockChain.Domain.Factory\IoT.WCD.BlockChain.Domain.Factory.csproj", "{D0AB9994-F7E3-4A3B-A1D6-EF719A62D657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Commands", "IoT.WCD.BlockChain.Application.Commands\IoT.WCD.BlockChain.Application.Commands.csproj", "{0326144C-A895-4D81-B405-1954C1C4F5B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.CommandHandlers", "IoT.WCD.BlockChain.Application.CommandHandlers\IoT.WCD.BlockChain.Application.CommandHandlers.csproj", "{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,10 +103,6 @@ Global
 		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF12340E-AE30-493B-916F-6201AE7A15D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{236EA831-1121-443C-B2C7-1085C6BAB3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,6 +135,30 @@ Global
 		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168F855D-7BDF-4D7F-AEA1-973A004F11EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A194EF91-AD8B-43A7-9D1B-227C1D9D8DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A194EF91-AD8B-43A7-9D1B-227C1D9D8DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A194EF91-AD8B-43A7-9D1B-227C1D9D8DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A194EF91-AD8B-43A7-9D1B-227C1D9D8DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C10788CA-56B4-42AF-A821-6AE2CC266CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10788CA-56B4-42AF-A821-6AE2CC266CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10788CA-56B4-42AF-A821-6AE2CC266CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10788CA-56B4-42AF-A821-6AE2CC266CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A701192-C82C-440D-B1E4-BB7EC60427D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A701192-C82C-440D-B1E4-BB7EC60427D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A701192-C82C-440D-B1E4-BB7EC60427D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A701192-C82C-440D-B1E4-BB7EC60427D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0AB9994-F7E3-4A3B-A1D6-EF719A62D657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0AB9994-F7E3-4A3B-A1D6-EF719A62D657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0AB9994-F7E3-4A3B-A1D6-EF719A62D657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AB9994-F7E3-4A3B-A1D6-EF719A62D657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0326144C-A895-4D81-B405-1954C1C4F5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0326144C-A895-4D81-B405-1954C1C4F5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0326144C-A895-4D81-B405-1954C1C4F5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0326144C-A895-4D81-B405-1954C1C4F5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
