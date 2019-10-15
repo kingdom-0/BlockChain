@@ -7,6 +7,11 @@ namespace IoT.WCD.BlockChain.Application.CommandHandlers
 {
     public class CommandHandlerFactory : ICommandHandlerFactory
     {
+        public CommandHandlerFactory()
+        {
+            
+        }
+
         public ICommandHandler<T> GetHandler<T>() where T : Command
         {
             var handlers = GetHandlerTypes<T>().ToList();

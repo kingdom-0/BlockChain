@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IoT.WCD.BlockChain.Domain.DomainEvents;
+using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using Unity;
 
@@ -25,12 +26,12 @@ namespace IoT.WCD.BlockChain.Domain
             //TODO:Validate logic.
         }
 
-        protected async Task<bool> Pass<TEvent>(TEvent @event)
+        protected bool Pass<TEvent>(TEvent @event)
             where TEvent:IEvent
         {
             //TODO:assign parameter
             _eventBus = IocContainer.Default.Resolve<IEventBus>();
-            await _eventBus.Publish(@event);
+             _eventBus.Publish(@event);
             return true;
         }
 

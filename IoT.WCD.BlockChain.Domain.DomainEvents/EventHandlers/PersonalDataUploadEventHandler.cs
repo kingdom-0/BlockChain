@@ -9,7 +9,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
 {
     class PersonalDataUploadEventHandler : IEventHandler<PersonalDataUploadEvent>
     {
-        public async Task Handle(PersonalDataUploadEvent @event)
+        public void Handle(PersonalDataUploadEvent @event)
         {
             //TODO: Some notification.
             //await BlogService.EnableJsPermission(@event.UserAlias);

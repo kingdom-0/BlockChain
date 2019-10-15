@@ -10,9 +10,9 @@ namespace IoT.WCD.BlockChain.BootStrapper
 {
     public class Startup
     {
-        private readonly UnityContainer _register = IocContainer.Default;
+        private static readonly UnityContainer _register = IocContainer.Default;
 
-        public void Configure()
+        public static void Configure()
         {
             _register.RegisterType<ICommandBus, CommandBus>();
             _register.RegisterType<IEventBus, EventBus>();

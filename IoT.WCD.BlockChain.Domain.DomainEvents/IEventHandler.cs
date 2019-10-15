@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
+using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents
 {
     public interface IEventHandler<in TEvent>
         where TEvent : IEvent
     {
-        Task Handle(TEvent @event);
+        void Handle(TEvent @event);
     }
 }

@@ -3,7 +3,7 @@
     public enum GenderType
     {
         Unknown,
-        Man,
-        Woman
+        Male,
+        Female
     }
 }

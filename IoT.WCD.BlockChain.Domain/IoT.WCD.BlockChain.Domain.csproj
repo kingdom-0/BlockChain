@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AggregateRoot.cs" />
     <Compile Include="ApplyAggregateRoot.cs" />
+    <Compile Include="Entity\ECGData.cs" />
     <Compile Include="Entity\UploadedPersonalData.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="IAggregateRoot.cs" />

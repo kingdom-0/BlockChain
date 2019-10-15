@@ -25,16 +25,5 @@ namespace IoT.WCD.BlockChain.Messaging
                 throw new UnregisteredDomainCommandException($"There was no handler with type {command.GetType()} registered.");
             }
         }
-
-        public TResult Send<TCommand, TResult>(TCommand command) where TCommand : ICommand
-        {
-            //TODO:Implement logic..
-            //var handler = _commandHandlerFactory.GetHandler<TCommand>();
-            //if (handler != null)
-            //{
-            //    handler.Execute(command);
-            //}
-            return default;
-        }
     }
 }
