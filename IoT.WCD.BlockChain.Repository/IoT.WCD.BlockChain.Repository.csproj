@@ -56,17 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplyRepository.cs" />
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Mementos\IOriginator.cs" />
     <Compile Include="Mementos\Memento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Storage\IEventStorage.cs" />
+    <Compile Include="Storage\InMemoryEventStorage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain.DomainEvents\IoT.WCD.BlockChain.Domain.DomainEvents.csproj">
-      <Project>{3333E4D7-B531-4722-9300-B20CF921AEC5}</Project>
-      <Name>IoT.WCD.BlockChain.Domain.DomainEvents</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Domain\IoT.WCD.BlockChain.Domain.csproj">
       <Project>{49F8EFEC-84FB-484D-AE32-662B477D3638}</Project>
       <Name>IoT.WCD.BlockChain.Domain</Name>
@@ -84,9 +82,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

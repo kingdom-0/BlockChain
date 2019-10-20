@@ -1,6 +1,7 @@
-﻿using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
+﻿
+using IoT.WCD.BlockChain.Domain.Common;
+using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
-using IoT.WCD.BlockChain.Repository.Interfaces;
 using Unity;
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents

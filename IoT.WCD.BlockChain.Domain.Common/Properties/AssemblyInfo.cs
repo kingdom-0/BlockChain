@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IoT.WCD.BlockChain.ValueObjects")]
+[assembly: AssemblyTitle("IoT.WCD.BlockChain.Domain.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IoT.WCD.BlockChain.ValueObjects")]
+[assembly: AssemblyProduct("IoT.WCD.BlockChain.Domain.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bec264aa-4586-4c6a-9c00-bd2cbdecd99d")]
+[assembly: Guid("4a58fe9b-22f8-49b1-9671-014cd03b80bf")]
 
 // Version information for an assembly consists of the following four values:
 //

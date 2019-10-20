@@ -66,9 +66,9 @@
       <Project>{0AB0792D-6A18-40B1-8571-2120BFED0653}</Project>
       <Name>IoT.WCD.BlockChain.Application.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain.DomainEvents\IoT.WCD.BlockChain.Domain.DomainEvents.csproj">
-      <Project>{3333E4D7-B531-4722-9300-B20CF921AEC5}</Project>
-      <Name>IoT.WCD.BlockChain.Domain.DomainEvents</Name>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain\IoT.WCD.BlockChain.Domain.csproj">
+      <Project>{49F8EFEC-84FB-484D-AE32-662B477D3638}</Project>
+      <Name>IoT.WCD.BlockChain.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts.csproj">
       <Project>{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}</Project>

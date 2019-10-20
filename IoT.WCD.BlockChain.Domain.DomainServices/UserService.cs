@@ -1,21 +1,21 @@
-﻿using IoT.WCD.BlockChain.Infrastructure;
+﻿using IoT.WCD.BlockChain.Application.Commands;
+using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
+using IoT.WCD.BlockChain.Repository.Interfaces;
+using Unity;
 
 namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
     public class UserService : IUserService
     {
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
 
-        //private static readonly IRepostory<User>
-
-        public UserService(UnitOfWork unitOfWork)
+        public UserService()
         {
-            _unitOfWork = unitOfWork;
+            _userRepository = IocContainer.Default.Resolve<IUserRepository>();
         }
-
-        public void Add()
+        public void Execute(CreateUserCommand createUserCommand)
         {
-
+            //var user = _userRepository.
         }
     }
 }

@@ -56,17 +56,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateRoot.cs" />
-    <Compile Include="ApplyAggregateRoot.cs" />
+    <Compile Include="DomainEvents\Events\ECGDataCreatedEvent.cs" />
+    <Compile Include="DomainEvents\Events\Event.cs" />
+    <Compile Include="DomainEvents\Events\IHandle.cs" />
+    <Compile Include="DomainServices\IUserService.cs" />
+    <Compile Include="DomainServices\UserService.cs" />
     <Compile Include="Entity\ECGData.cs" />
     <Compile Include="Entity\UploadedPersonalData.cs" />
     <Compile Include="Entity\User.cs" />
+    <Compile Include="EventBus.cs" />
     <Compile Include="IAggregateRoot.cs" />
+    <Compile Include="IDataProvider.cs" />
+    <Compile Include="IEvent.cs" />
+    <Compile Include="IEventBus.cs" />
+    <Compile Include="IEventHandler.cs" />
+    <Compile Include="IEventHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\Mementos\IOriginator.cs" />
+    <Compile Include="Repositories\Mementos\Memento.cs" />
+    <Compile Include="Repositories\Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\Repositories\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repositories\Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\Storage\IEventStorage.cs" />
+    <Compile Include="Repositories\Storage\InMemoryEventStorage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain.DomainEvents\IoT.WCD.BlockChain.Domain.DomainEvents.csproj">
-      <Project>{3333E4D7-B531-4722-9300-B20CF921AEC5}</Project>
-      <Name>IoT.WCD.BlockChain.Domain.DomainEvents</Name>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Commands\IoT.WCD.BlockChain.Application.Commands.csproj">
+      <Project>{0326144C-A895-4D81-B405-1954C1C4F5B1}</Project>
+      <Name>IoT.WCD.BlockChain.Application.Commands</Name>
     </ProjectReference>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts.csproj">
       <Project>{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}</Project>
@@ -79,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DomainEvents\EventHandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

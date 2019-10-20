@@ -61,11 +61,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Messaging\IoT.WCD.BlockChain.Messaging.csproj">
-      <Project>{44DB99E9-AD7B-4399-90E8-637D305C0F8B}</Project>
-      <Name>IoT.WCD.BlockChain.Messaging</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

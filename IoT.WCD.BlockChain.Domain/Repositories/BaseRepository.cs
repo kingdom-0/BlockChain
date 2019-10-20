@@ -2,35 +2,55 @@
 using System.Collections.Generic;
 using System.Linq;
 using IoT.WCD.BlockChain.Domain.Common;
-using IoT.WCD.BlockChain.Repository.Interfaces;
+using IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces;
+using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Repository.Mementos;
 using IoT.WCD.BlockChain.Repository.Storage;
+using Unity;
 
-namespace IoT.WCD.BlockChain.Repository
+namespace IoT.WCD.BlockChain.Domain.Repositories
 {
     public abstract class BaseRepository<TAggregateRoot>:IRepository<TAggregateRoot>
         where TAggregateRoot:class,IAggregateRoot,new()
     {
         private readonly IEventStorage _eventStorage;
         private static readonly object Locker = new object();
-        //protected readonly IQueryable<TAggregateRoot> _entities;
 
-        public BaseRepository(IEventStorage eventStorage)
+        protected BaseRepository()
         {
-            _eventStorage = eventStorage;
+            _eventStorage = IocContainer.Default.Resolve<IEventStorage>();
         }
 
         public TAggregateRoot GetById(Guid id)
         {
-            IEnumerable<IEvent> events;
             var memento = _eventStorage.GetMemento<Memento>(id);
+            if (memento == null)
+            {
+                return default(TAggregateRoot);
+            }
+            return GetBySpecCondition(memento);
+        }
+
+        public TAggregateRoot GetBySearchKey(string searchKey)
+        {
+            var memento = _eventStorage.GetMemento<Memento>(searchKey);
+            if (memento == null)
+            {
+                return default(TAggregateRoot);
+            }
+            return GetBySpecCondition(memento);
+        }
+
+        private TAggregateRoot GetBySpecCondition(Memento memento)
+        {
+            IEnumerable<IEvent> events;
             if (memento != null)
             {
-                events = _eventStorage.GetEvents(id).Where(e => e.Version >= memento.Version);
+                events = _eventStorage.GetEvents(memento.Id).Where(e => e.Version >= memento.Version);
             }
             else
             {
-                events = _eventStorage.GetEvents(id);
+                events = _eventStorage.GetEvents(memento.Id);
             }
 
             var instance = new TAggregateRoot();
@@ -47,7 +67,8 @@ namespace IoT.WCD.BlockChain.Repository
         {
             if (!aggregateRoot.GetUncommittedChanges().Any())
             {
-                return;
+                //TODO: In order to debug, save single aggregate instance.
+                //return;
             }
 
             lock (Locker)
@@ -63,7 +84,7 @@ namespace IoT.WCD.BlockChain.Repository
                     throw new Exception($"Entity {aggregateRoot} has been modified previously");
                 }
 
-                _eventStorage.Save(entity);
+                _eventStorage.Save(aggregateRoot);
             }
         }
     }

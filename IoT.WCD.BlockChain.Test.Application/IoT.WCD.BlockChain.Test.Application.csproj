@@ -85,6 +85,10 @@
       <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
       <Name>IoT.WCD.BlockChain.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Messaging\IoT.WCD.BlockChain.Messaging.csproj">
+      <Project>{6A701192-C82C-440D-B1E4-BB7EC60427D8}</Project>
+      <Name>IoT.WCD.BlockChain.Messaging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

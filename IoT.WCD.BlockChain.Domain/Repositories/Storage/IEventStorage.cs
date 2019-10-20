@@ -10,6 +10,7 @@ namespace IoT.WCD.BlockChain.Repository.Storage
         IEnumerable<IEvent> GetEvents(Guid aggregateId);
         void Save(IAggregateRoot aggregate);
         T GetMemento<T>(Guid aggregateId) where T: Memento;
+        T GetMemento<T>(string searchKey) where T : Memento;
         void SaveMemento(Memento memento);
     }
 }

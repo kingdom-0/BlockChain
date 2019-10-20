@@ -1,10 +1,21 @@
 ﻿using System;
+
 using IoT.WCD.BlockChain.Infrastructure.Enums;
 
 namespace IoT.WCD.BlockChain.Domain.Entity
 {
-    public class User
+    public class User : AggregateRoot
     {
+        public User()
+        {
+            
+        }
+
+        public User(Guid guid):base(guid)
+        {
+            
+        }
+
         public string Name { get; internal set; }
 
         public string PhoneNumber { get; internal set; }

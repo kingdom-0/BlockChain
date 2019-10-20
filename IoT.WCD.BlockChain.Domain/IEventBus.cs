@@ -1,4 +1,6 @@
-﻿using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
+﻿
+using IoT.WCD.BlockChain.Domain.Common;
+using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents
 {

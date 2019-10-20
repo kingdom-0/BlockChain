@@ -56,14 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventBus.cs" />
-    <Compile Include="EventHandlers\PersonalDataUploadEventHandler.cs" />
-    <Compile Include="Events\ECGDataCreatedEvent.cs" />
-    <Compile Include="Events\Event.cs" />
-    <Compile Include="Events\IEvent.cs" />
-    <Compile Include="Events\IHandle.cs" />
-    <Compile Include="Events\PersonalDataUploadEvent.cs" />
     <Compile Include="IEventBus.cs" />
     <Compile Include="IEventHandler.cs" />
+    <Compile Include="IEventHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
