@@ -59,6 +59,7 @@
     <Compile Include="DomainEvents\Events\ECGDataCreatedEvent.cs" />
     <Compile Include="DomainEvents\Events\Event.cs" />
     <Compile Include="DomainEvents\Events\IHandle.cs" />
+    <Compile Include="DomainEvents\Events\UserCreatedEvent.cs" />
     <Compile Include="DomainServices\IUserService.cs" />
     <Compile Include="DomainServices\UserService.cs" />
     <Compile Include="Entity\ECGData.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Mementos\IOriginator.cs" />
     <Compile Include="Repositories\Mementos\Memento.cs" />
+    <Compile Include="Repositories\Mementos\UserMemento.cs" />
     <Compile Include="Repositories\Repositories\Interfaces\IRepository.cs" />
     <Compile Include="Repositories\Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\Repositories\UserRepository.cs" />

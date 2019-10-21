@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using IoT.WCD.BlockChain.Domain.Common;
+using IoT.WCD.BlockChain.Infrastructure.Utilities;
 
 namespace IoT.WCD.BlockChain.Domain
 {
@@ -45,13 +45,14 @@ namespace IoT.WCD.BlockChain.Domain
 
         protected void ApplyChange(IEvent changeEvent)
         {
-            ApplyChange(changeEvent);
+            ApplyChange(changeEvent,true);
         }
 
         private void ApplyChange(IEvent changEvent, bool isNew)
         {
             dynamic d = this;
-            d.Handle(Convert.ChangeType(changEvent, changEvent.GetType()));
+            var destEvent = Converter.ChangeTo(changEvent, changEvent.GetType());
+            d.Handle(destEvent);
             if (isNew)
             {
                 _changeEvents.Add(changEvent);

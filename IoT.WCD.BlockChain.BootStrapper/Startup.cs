@@ -18,6 +18,7 @@ namespace IoT.WCD.BlockChain.BootStrapper
 
         public static void Configure()
         {
+            //_register.RegisterType<IEventHandlerFactory, Eventhan>()
             _register.RegisterType<IEventStorage, InMemoryEventStorage>();
             _register.RegisterType<IUserRepository, UserRepository>();
             _register.RegisterType<ICommandBus, CommandBus>();

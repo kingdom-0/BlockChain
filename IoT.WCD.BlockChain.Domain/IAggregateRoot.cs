@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IoT.WCD.BlockChain.Domain.Common
+namespace IoT.WCD.BlockChain.Domain
 {
     public interface IAggregateRoot
     {

@@ -22,12 +22,9 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
             {
                 throw new Exception("Phone number is registered.");
             }
-            var newUser = new User(createUserCommand.Id)
+            var newUser = new User(createUserCommand.Id,createUserCommand.Name,createUserCommand.PhoneNumber
+                ,createUserCommand.Address,createUserCommand.GenderType)
             {
-                GenderType = createUserCommand.GenderType,
-                Address = createUserCommand.Address,
-                Name = createUserCommand.Name,
-                PhoneNumber = createUserCommand.PhoneNumber,
                 Version = -1
             };
             _userRepository.Save(newUser,newUser.Version);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using IoT.WCD.BlockChain.Domain.Common;
 using IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Repository.Mementos;
