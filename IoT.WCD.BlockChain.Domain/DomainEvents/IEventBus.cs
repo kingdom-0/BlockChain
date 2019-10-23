@@ -1,4 +1,6 @@
-﻿namespace IoT.WCD.BlockChain.Domain.DomainEvents
+﻿using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
+
+namespace IoT.WCD.BlockChain.Domain.DomainEvents
 {
     public interface IEventBus
     {

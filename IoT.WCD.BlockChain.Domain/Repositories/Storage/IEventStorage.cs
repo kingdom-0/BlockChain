@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using IoT.WCD.BlockChain.Domain;
+using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Repository.Storage

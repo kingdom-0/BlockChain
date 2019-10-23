@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IoT.WCD.BlockChain.Domain
+namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 {
     public interface IEvent
     {

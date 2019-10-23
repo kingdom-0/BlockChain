@@ -36,6 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.7.1\lib\net45\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -56,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateRoot.cs" />
+    <Compile Include="DomainEvents\EventHandlers\EventHandlerFactory.cs" />
+    <Compile Include="DomainEvents\EventHandlers\UserCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\Events\ECGDataCreatedEvent.cs" />
     <Compile Include="DomainEvents\Events\Event.cs" />
     <Compile Include="DomainEvents\Events\IHandle.cs" />
@@ -65,14 +70,18 @@
     <Compile Include="Entity\ECGData.cs" />
     <Compile Include="Entity\UploadedPersonalData.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="EventBus.cs" />
+    <Compile Include="DomainEvents\EventBus.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IDataProvider.cs" />
-    <Compile Include="IEvent.cs" />
-    <Compile Include="IEventBus.cs" />
-    <Compile Include="IEventHandler.cs" />
-    <Compile Include="IEventHandlerFactory.cs" />
+    <Compile Include="DomainEvents\Events\IEvent.cs" />
+    <Compile Include="DomainEvents\IEventBus.cs" />
+    <Compile Include="DomainEvents\EventHandlers\IEventHandler.cs" />
+    <Compile Include="DomainEvents\EventHandlers\IEventHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\IReadOnlyDatabase.cs" />
+    <Compile Include="Queries\IUserDatabase.cs" />
+    <Compile Include="Queries\UserDatabase.cs" />
+    <Compile Include="Queries\UserDto.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Mementos\IOriginator.cs" />
     <Compile Include="Repositories\Mementos\Memento.cs" />
@@ -100,8 +109,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DomainEvents\EventHandlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
