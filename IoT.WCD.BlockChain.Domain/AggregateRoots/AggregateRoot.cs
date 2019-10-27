@@ -4,8 +4,9 @@ using System.Linq;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Infrastructure.Utilities;
 
-namespace IoT.WCD.BlockChain.Domain
+namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
+    [Serializable]
     public class AggregateRoot : IAggregateRoot,IDataProvider
     {
         private readonly List<IEvent> _changeEvents;

@@ -1,6 +1,6 @@
 ﻿using System;
 using IoT.WCD.BlockChain.Application.Commands;
-using IoT.WCD.BlockChain.Domain.Entity;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using Unity;

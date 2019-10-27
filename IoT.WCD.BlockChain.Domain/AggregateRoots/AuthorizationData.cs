@@ -1,13 +1,21 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
+using IoT.WCD.BlockChain.Domain.Entities.Impl;
 using IoT.WCD.BlockChain.Domain.Repositories.Mementos;
 using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
-namespace IoT.WCD.BlockChain.Domain.Entity
+namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
+    [Serializable]
     public class AuthorizationData:AggregateRoot,IHandle<AuthDataCreatedEvent>,IOriginator
     {
+        public static readonly AuthorizationData Dummy = new AuthorizationData(Guid.NewGuid(), Guid.Empty, string.Empty,
+            AuthorizationType.None, DateTime.Now);
+
         public Guid UserId { get; set; }
 
         public string ServiceKey { get; set; }
@@ -58,6 +66,19 @@ namespace IoT.WCD.BlockChain.Domain.Entity
             ServiceKey = authDataMemento.ServiceKey;
             AuthorizationType = authDataMemento.AuthorizationType;
             CreateTime = authDataMemento.CreateTime;
+        }
+
+        public byte[] ToBytesArray()
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            byte[] result;
+            using (var ms = new MemoryStream())
+            {
+                binaryFormatter.Serialize(ms, this);
+                result = ms.ToArray();
+            }
+
+            return result;
         }
     }
 }

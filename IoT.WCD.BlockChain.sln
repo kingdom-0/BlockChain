@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Entities", "IoT.WCD.BlockChain.Entities\IoT.WCD.BlockChain.Entities.csproj", "{AF9D679C-DA6F-4D12-A72E-82D3B668C2E8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Entry", "IoT.WCD.BlockChain.Entry\IoT.WCD.BlockChain.Entry.csproj", "{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test", "IoT.WCD.BlockChain.Test\IoT.WCD.BlockChain.Test.csproj", "{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.DTOs", "IoT.WCD.BlockChain.Application.DTOs\IoT.WCD.BlockChain.Application.DTOs.csproj", "{E09770BD-946E-4529-8AA7-C1F301D1C6A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Interfaces", "IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj", "{B8ADD744-A84A-4662-9FF9-987032EB06C3}"
 EndProject
@@ -47,10 +43,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF9D679C-DA6F-4D12-A72E-82D3B668C2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF9D679C-DA6F-4D12-A72E-82D3B668C2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF9D679C-DA6F-4D12-A72E-82D3B668C2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF9D679C-DA6F-4D12-A72E-82D3B668C2E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,10 +51,6 @@ Global
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E09770BD-946E-4529-8AA7-C1F301D1C6A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Release|Any CPU.ActiveCfg = Release|Any CPU

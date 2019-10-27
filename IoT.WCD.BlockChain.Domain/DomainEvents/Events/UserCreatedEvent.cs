@@ -3,6 +3,7 @@ using IoT.WCD.BlockChain.Infrastructure.Enums;
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 {
+    [Serializable]
     public class UserCreatedEvent : Event
     {
         public string Name { get; internal set; }

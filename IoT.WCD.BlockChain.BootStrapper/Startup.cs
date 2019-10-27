@@ -1,12 +1,11 @@
 ﻿using IoT.WCD.BlockChain.Application.CommandHandlers;
-using IoT.WCD.BlockChain.Application.Interfaces;
-using IoT.WCD.BlockChain.Application.Services;
 using IoT.WCD.BlockChain.Domain.DomainEvents;
 using IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers;
 using IoT.WCD.BlockChain.Domain.DomainServices;
 using IoT.WCD.BlockChain.Domain.Queries;
 using IoT.WCD.BlockChain.Domain.Repositories.Repositories;
 using IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces;
+using IoT.WCD.BlockChain.Domain.Repositories.Storage;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Messaging;
 using IoT.WCD.BlockChain.Repository.Storage;
@@ -26,12 +25,12 @@ namespace IoT.WCD.BlockChain.BootStrapper
             //ReadOnly
             Register.RegisterType<IUserDatabase, UserDatabase>();
             Register.RegisterType<IECGDataDatabase, ECGDataDatabase>();
+            Register.RegisterType<IECGDataDatabaseProxy, ECGDataDatabaseProxy>();
             Register.RegisterType<IAuthDataDatabase, AuthDataDatabase>();
 
             //Writable
             Register.RegisterType<ICommandHandlerFactory, CommandHandlerFactory>();
 
-            Register.RegisterType<IPersonalDataUploadService, PersonalDataUploadService>();
             Register.RegisterType<IECGDataService, ECGDataService>();
             Register.RegisterType<IUserService, UserService>();
             Register.RegisterType<IAuthDataService, AuthDataService>();
@@ -41,13 +40,9 @@ namespace IoT.WCD.BlockChain.BootStrapper
             Register.RegisterType<IAuthDataRepository, AuthDataRepository>();
             
             Register.RegisterType<IEventStorage, InMemoryEventStorage>();
+            Register.RegisterType<IAuthDataStorage, InMemoryAuthDataStorage>();
 
             Register.RegisterType<IEventHandlerFactory, EventHandlerFactory>();
-
-            
-            
-            
-            
         }
     }
 }

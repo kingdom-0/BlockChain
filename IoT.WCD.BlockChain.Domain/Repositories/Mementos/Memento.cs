@@ -2,6 +2,7 @@
 
 namespace IoT.WCD.BlockChain.Repository.Mementos
 {
+    [Serializable]
     public class Memento
     {
         public Guid Id { get; internal set; }

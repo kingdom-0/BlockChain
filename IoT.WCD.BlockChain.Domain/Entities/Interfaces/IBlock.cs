@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 
-namespace IoT.WCD.BlockChain.Entities.Interfaces
+namespace IoT.WCD.BlockChain.Domain.Entities.Interfaces
 {
     public interface IBlock
     {
-        List<byte> Data { get; }
+        AuthorizationData Data { get; }
 
         List<byte> Hash { get; set; }
 

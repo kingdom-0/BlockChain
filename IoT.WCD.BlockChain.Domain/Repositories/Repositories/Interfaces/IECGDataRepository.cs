@@ -1,4 +1,4 @@
-﻿using IoT.WCD.BlockChain.Domain.Entity;
+﻿using IoT.WCD.BlockChain.Domain.AggregateRoots;
 
 namespace IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces
 {

@@ -4,7 +4,7 @@ using IoT.WCD.BlockChain.Domain.Repositories.Mementos;
 using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
-namespace IoT.WCD.BlockChain.Domain.Entity
+namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
     public class User : AggregateRoot,IHandle<UserCreatedEvent>,IOriginator
     {
@@ -15,6 +15,7 @@ namespace IoT.WCD.BlockChain.Domain.Entity
 
         public User(Guid id, string name, string phoneNumber, string address, GenderType genderType):base(id)
         {
+            AccessToken = Guid.NewGuid();
             ApplyChange(new UserCreatedEvent(id,name,phoneNumber,address,DateTime.Now));
         }
 
@@ -27,6 +28,8 @@ namespace IoT.WCD.BlockChain.Domain.Entity
         public string Address { get; internal set; }
 
         public DateTime CreateTime { get; private set; }
+
+        public Guid AccessToken { get; private set; }
 
         public void Handle(UserCreatedEvent e)
         {

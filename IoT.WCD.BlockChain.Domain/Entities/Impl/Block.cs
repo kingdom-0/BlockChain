@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using IoT.WCD.BlockChain.Entities.Interfaces;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
+using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
 
-namespace IoT.WCD.BlockChain.Entities.Impl
+namespace IoT.WCD.BlockChain.Domain.Entities.Impl
 {
     public class Block:IBlock
     {
-        public Block(List<byte> data)
+
+        public Block(AuthorizationData authorizationData)
         {
-            Data = data ?? throw new ArgumentNullException(nameof(data));
+            Data = authorizationData ?? throw new ArgumentNullException(nameof(authorizationData));
             Nonce = 0;
             PreviousHash = new List<byte>(){0x00};
             Timestamp = DateTime.Now;
         }
-        public List<byte> Data { get; }
+        public AuthorizationData Data { get; }
         public List<byte> Hash { get; set; }
         public int Nonce { get; set; }
         public List<byte> PreviousHash { get; set; }
@@ -29,7 +31,7 @@ namespace IoT.WCD.BlockChain.Entities.Impl
             {
                 using (var writer = new BinaryWriter(stream))
                 {
-                    writer.Write(Data.ToArray());
+                    writer.Write(Data.ToBytesArray());
                     writer.Write(Nonce);
                     writer.Write(Timestamp.ToBinary());
                     writer.Write(PreviousHash.ToArray());

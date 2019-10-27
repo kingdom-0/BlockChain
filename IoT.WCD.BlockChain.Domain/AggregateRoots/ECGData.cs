@@ -3,7 +3,7 @@ using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Domain.Repositories.Mementos;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
-namespace IoT.WCD.BlockChain.Domain.Entity
+namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
     public class ECGData : AggregateRoot,IHandle<ECGDataCreatedEvent>,IOriginator
     {

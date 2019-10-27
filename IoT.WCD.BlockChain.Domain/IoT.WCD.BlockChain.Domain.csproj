@@ -58,7 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="AggregateRoots\AggregateRoot.cs" />
     <Compile Include="DomainEvents\EventHandlers\AuthDataCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\ECGDataCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\EventHandlerFactory.cs" />
@@ -75,24 +75,29 @@
     <Compile Include="DomainServices\IECGDataService.cs" />
     <Compile Include="DomainServices\IUserService.cs" />
     <Compile Include="DomainServices\UserService.cs" />
-    <Compile Include="Entity\AuthorizationData.cs" />
-    <Compile Include="Entity\ECGData.cs" />
-    <Compile Include="Entity\UploadedPersonalData.cs" />
-    <Compile Include="Entity\User.cs" />
+    <Compile Include="AggregateRoots\AuthorizationData.cs" />
+    <Compile Include="AggregateRoots\ECGData.cs" />
+    <Compile Include="AggregateRoots\User.cs" />
     <Compile Include="DomainEvents\EventBus.cs" />
-    <Compile Include="IAggregateRoot.cs" />
-    <Compile Include="IDataProvider.cs" />
+    <Compile Include="AggregateRoots\IAggregateRoot.cs" />
+    <Compile Include="AggregateRoots\IDataProvider.cs" />
     <Compile Include="DomainEvents\Events\IEvent.cs" />
     <Compile Include="DomainEvents\IEventBus.cs" />
     <Compile Include="DomainEvents\EventHandlers\IEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\IEventHandlerFactory.cs" />
+    <Compile Include="Entities\Impl\Block.cs" />
+    <Compile Include="Entities\Impl\BlockChain.cs" />
+    <Compile Include="Entities\Interfaces\IBlock.cs" />
+    <Compile Include="Entities\Interfaces\IBlockChain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\AuthDataDatabase.cs" />
     <Compile Include="Queries\AuthDataDto.cs" />
     <Compile Include="Queries\ECGDataDatabase.cs" />
+    <Compile Include="Queries\ECGDataDatabaseProxy.cs" />
     <Compile Include="Queries\ECGDataDto.cs" />
     <Compile Include="Queries\IAuthDataDatabase.cs" />
     <Compile Include="Queries\IECGDataDatabase.cs" />
+    <Compile Include="Queries\IECGDataDatabaseProxy.cs" />
     <Compile Include="Queries\IReadOnlyDatabase.cs" />
     <Compile Include="Queries\IUserDatabase.cs" />
     <Compile Include="Queries\UserDatabase.cs" />
@@ -110,8 +115,11 @@
     <Compile Include="Repositories\Repositories\Interfaces\IRepository.cs" />
     <Compile Include="Repositories\Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\Storage\IAuthDataStorage.cs" />
     <Compile Include="Repositories\Storage\IEventStorage.cs" />
+    <Compile Include="Repositories\Storage\InMemoryAuthDataStorage.cs" />
     <Compile Include="Repositories\Storage\InMemoryEventStorage.cs" />
+    <Compile Include="Repositories\Storage\IStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Commands\IoT.WCD.BlockChain.Application.Commands.csproj">
@@ -125,6 +133,10 @@
     <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
       <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
       <Name>IoT.WCD.BlockChain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.ValueObjects\IoT.WCD.BlockChain.ValueObjects.csproj">
+      <Project>{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}</Project>
+      <Name>IoT.WCD.BlockChain.ValueObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

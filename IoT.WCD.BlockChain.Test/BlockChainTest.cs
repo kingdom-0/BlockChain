@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Linq;
-using IoT.WCD.BlockChain.Entities.Impl;
-using IoT.WCD.BlockChain.Entities.Interfaces;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
+using IoT.WCD.BlockChain.Domain.Entities.Impl;
+using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
+using IoT.WCD.BlockChain.Infrastructure.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IoT.WCD.BlockChain.Test
@@ -9,11 +10,10 @@ namespace IoT.WCD.BlockChain.Test
     [TestClass]
     public class BlockChainTest
     {
-        private static readonly Random Random = new Random(DateTime.Now.Millisecond);
-        private static readonly IBlock GenesisBlock = new Block(new byte[]{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00});
+        private static readonly IBlock GenesisBlock = new Block(AuthorizationData.Dummy);
         private static readonly byte[] Difficulty = {0x00,0x00};
 
-        private readonly Entities.Impl.BlockChain _chain = new Entities.Impl.BlockChain(Difficulty,GenesisBlock);
+        private readonly Domain.Entities.Impl.BlockChain _chain = new Domain.Entities.Impl.BlockChain(Difficulty,GenesisBlock);
 
         [TestMethod]
         public void TestBlockChainConstructor()
@@ -30,8 +30,9 @@ namespace IoT.WCD.BlockChain.Test
         [TestMethod]
         public void TestBlockChainNewBlock()
         {
-            var data = Enumerable.Range(0, 256).Select(x => (byte) Random.Next());
-            _chain.Add(new Block(data.ToArray()));
+            var authorizationData = new AuthorizationData(Guid.NewGuid(), Guid.Empty, "test key",
+                AuthorizationType.ReadAndWrite, DateTime.Now);
+            _chain.Add(new Block(authorizationData));
             Assert.AreEqual(2,_chain.Blocks.Count);
         }
     }

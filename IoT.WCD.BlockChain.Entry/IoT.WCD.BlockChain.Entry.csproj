@@ -50,9 +50,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Entities\IoT.WCD.BlockChain.Entities.csproj">
-      <Project>{af9d679c-da6f-4d12-a72e-82d3b668c2e8}</Project>
-      <Name>IoT.WCD.BlockChain.Entities</Name>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Domain\IoT.WCD.BlockChain.Domain.csproj">
+      <Project>{49F8EFEC-84FB-484D-AE32-662B477D3638}</Project>
+      <Name>IoT.WCD.BlockChain.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
+      <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
+      <Name>IoT.WCD.BlockChain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.ValueObjects\IoT.WCD.BlockChain.ValueObjects.csproj">
+      <Project>{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}</Project>
+      <Name>IoT.WCD.BlockChain.ValueObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

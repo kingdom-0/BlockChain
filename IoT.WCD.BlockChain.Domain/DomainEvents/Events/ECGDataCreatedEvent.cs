@@ -2,6 +2,7 @@
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 {
+    [Serializable]
     public class ECGDataCreatedEvent : Event
     {
         public Guid UserId { get; set; }

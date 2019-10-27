@@ -1,23 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using IoT.WCD.BlockChain.Entities.Impl;
-using IoT.WCD.BlockChain.Entities.Interfaces;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
+using IoT.WCD.BlockChain.Domain.Entities.Impl;
+using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
+using IoT.WCD.BlockChain.Infrastructure.Enums;
 
 namespace IoT.WCD.BlockChain.Entry
 {
     class Program
     {
         private static readonly Random RandomGenerator = new Random(DateTime.Now.Millisecond);
-        private static readonly IBlock GenesisBlock = new Block(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
+        private static readonly IBlock GenesisBlock = new Block(AuthorizationData.Dummy);
         private static readonly byte[] ProofOfWorkDifficulty = { 0x00, 0x00 };
         static void Main()
         {
-            IBlockChain chain = new Entities.Impl.BlockChain(ProofOfWorkDifficulty, GenesisBlock);
+            IBlockChain chain = new Domain.Entities.Impl.BlockChain(ProofOfWorkDifficulty, GenesisBlock);
             //start mining 20 blocks in a loop
             for (var i = 0; i < 20; i++)
             {
-                var data = Enumerable.Range(0, 256).Select(x => (byte)RandomGenerator.Next());
-                chain.Add(new Block(data.ToArray()));
+                var authorizationData = new AuthorizationData(Guid.NewGuid(), Guid.Empty, "test key",
+                    AuthorizationType.ReadAndWrite, DateTime.Now);
+                chain.Add(new Block(authorizationData));
                 Console.WriteLine(chain.LastOrDefault()?.ToString());
                 Console.WriteLine($"Chain is valid : {chain.IsValid()}");
             }

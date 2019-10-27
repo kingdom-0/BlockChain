@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Domain.Repositories.Repositories.Interfaces;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
@@ -21,7 +22,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
             _eventStorage = IocContainer.Default.Resolve<IEventStorage>();
         }
 
-        public TAggregateRoot GetById(Guid id)
+        public virtual TAggregateRoot GetById(Guid id)
         {
             var memento = _eventStorage.GetMemento<Memento>(id);
             if (memento == null)
@@ -31,7 +32,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
             return GetBySpecCondition(memento);
         }
 
-        public TAggregateRoot GetBySearchKey(string searchKey)
+        public virtual TAggregateRoot GetBySearchKey(string searchKey)
         {
             var memento = _eventStorage.GetMemento<Memento>(searchKey);
             if (memento == null)
@@ -63,7 +64,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
             return instance;
         }
 
-        public void Save(IAggregateRoot aggregateRoot, int expectedVersion)
+        public virtual void Save(IAggregateRoot aggregateRoot, int expectedVersion)
         {
             if (!aggregateRoot.GetUncommittedChanges().Any())
             {

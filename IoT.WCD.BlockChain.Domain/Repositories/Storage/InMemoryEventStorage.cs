@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using IoT.WCD.BlockChain.Domain;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.DomainEvents;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Repository.Mementos;
