@@ -12,7 +12,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents
             
         }
         public void Publish<TEvent>(TEvent @event)
-            where TEvent : IEvent
+            where TEvent : Event
         {
             var eventHandlerFactory = IocContainer.Default.Resolve<IEventHandlerFactory>();
             var handlers = eventHandlerFactory.GetHandlers<TEvent>();

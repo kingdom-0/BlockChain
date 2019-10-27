@@ -27,6 +27,8 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
                 CreateTime = handle.CreateTime
             };
             _userDatabase.Add(userDto);
+
+            //TODO: Send email to target user.
         }
     }
 }

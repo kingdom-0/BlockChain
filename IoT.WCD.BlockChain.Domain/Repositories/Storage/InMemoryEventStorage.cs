@@ -40,9 +40,11 @@ namespace IoT.WCD.BlockChain.Repository.Storage
             foreach (var uncommittedChange in uncommittedChanges)
             {
                 version++;
-                if (version > 2)
+                //if (version > 2)
+                if(true)
                 {
-                    if (version % 3 == 0)
+                    //if (version % 3 == 0)
+                    if(true)
                     {
                         var originator = (IOriginator) aggregate;
                         var memento = originator.GetMemento();

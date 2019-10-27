@@ -8,7 +8,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
     public class EventHandlerFactory : IEventHandlerFactory
     {
 
-        public List<IEventHandler<T>> GetHandlers<T>() where T : IEvent
+        public List<IEventHandler<T>> GetHandlers<T>() where T : Event
         {
             var handlerTypes = GetHandlerTypes<T>().ToList();
 
@@ -21,20 +21,11 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
             return handlers;
         }
 
-        private static IEnumerable<Type> GetHandlerTypes<T>() where T : IEvent
+        private static IEnumerable<Type> GetHandlerTypes<T>() where T : Event
         {
-            var h1 = typeof(IEventHandler<T>).Assembly.GetExportedTypes();
-            var h2 = typeof(IEventHandler<T>).Assembly.GetExportedTypes()
-                .Where(x => x.GetInterfaces()
-                    .Any(a => a.IsGenericType && a.GetGenericTypeDefinition() == typeof(IEventHandler<T>)));
-            var h3 = typeof(IEventHandler<T>).Assembly.GetExportedTypes()
-                .Where(x => x.GetInterfaces()
-                    .Any(a => a.IsGenericType && a.GetGenericTypeDefinition() == typeof(IEventHandler<T>)))
-                .Where(i => i.GetInterfaces()
-                    .Any(ga => ga.GetGenericArguments().Any(t=>t==typeof(T))));
             var handlers = typeof(IEventHandler<T>).Assembly.GetExportedTypes()
                 .Where(x => x.GetInterfaces()
-                    .Any(a => a.IsGenericType && a.GetGenericTypeDefinition() == typeof(IEventHandler<T>)))
+                    .Any(a => a.IsGenericType && a.GetGenericTypeDefinition() == typeof(IEventHandler<>)))
                 .Where(i => i.GetInterfaces()
                     .Any(ga => ga.GetGenericArguments()
                         .Any(t => t == typeof(T)))).ToList();

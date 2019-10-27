@@ -5,6 +5,6 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
 {
     public interface IEventHandlerFactory
     {
-        List<IEventHandler<T>> GetHandlers<T>() where T : IEvent;
+        List<IEventHandler<T>> GetHandlers<T>() where T : Event;
     }
 }
