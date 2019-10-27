@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="CreateAuthorizationDataCommand.cs" />
+    <Compile Include="CreateECGDataCommand.cs" />
     <Compile Include="CreateUserCommand.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

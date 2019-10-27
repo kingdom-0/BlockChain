@@ -2,8 +2,8 @@
 
 namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
-    public interface IUserService : IDomainService<CreateUserCommand>
+    public interface IDomainService<T> where T:Command
     {
-
+        void Execute(T command);
     }
 }

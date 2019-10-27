@@ -20,15 +20,34 @@ namespace IoT.WCD.BlockChain.BootStrapper
 
         public static void Configure()
         {
-            Register.RegisterType<IEventStorage, InMemoryEventStorage>();
-            Register.RegisterType<IUserRepository, UserRepository>();
             Register.RegisterType<ICommandBus, CommandBus>();
             Register.RegisterType<IEventBus, EventBus>();
-            Register.RegisterType<IUserService, UserService>();
-            Register.RegisterType<ICommandHandlerFactory, CommandHandlerFactory>();
-            Register.RegisterType<IPersonalDataUploadService, PersonalDataUploadService>();
+
+            //ReadOnly
             Register.RegisterType<IUserDatabase, UserDatabase>();
+            Register.RegisterType<IECGDataDatabase, ECGDataDatabase>();
+            Register.RegisterType<IAuthDataDatabase, AuthDataDatabase>();
+
+            //Writable
+            Register.RegisterType<ICommandHandlerFactory, CommandHandlerFactory>();
+
+            Register.RegisterType<IPersonalDataUploadService, PersonalDataUploadService>();
+            Register.RegisterType<IECGDataService, ECGDataService>();
+            Register.RegisterType<IUserService, UserService>();
+            Register.RegisterType<IAuthDataService, AuthDataService>();
+            
+            Register.RegisterType<IUserRepository, UserRepository>();
+            Register.RegisterType<IECGDataRepository, ECGDataRepoistory>();
+            Register.RegisterType<IAuthDataRepository, AuthDataRepository>();
+            
+            Register.RegisterType<IEventStorage, InMemoryEventStorage>();
+
             Register.RegisterType<IEventHandlerFactory, EventHandlerFactory>();
+
+            
+            
+            
+            
         }
     }
 }

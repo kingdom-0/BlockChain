@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
+namespace IoT.WCD.BlockChain.Application.Commands
 {
-    public class ECGDataCreatedEvent : Event
+    public class CreateECGDataCommand : Command
     {
         public Guid UserId { get; set; }
 
@@ -12,10 +12,9 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 
         public DateTime CreateTime { get; set; }
 
-        public ECGDataCreatedEvent(Guid aggregateId, Guid userId, byte[] rawData, byte[] impedanceData, DateTime createTime)
+        public CreateECGDataCommand(Guid userId, byte[] rawData, byte[] impedanceData,
+            DateTime createTime, Guid id, int version) : base(id, version)
         {
-            Id = Guid.NewGuid();
-            AggregateId = aggregateId;
             UserId = userId;
             RawData = rawData;
             ImpedanceData = impedanceData;

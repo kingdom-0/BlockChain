@@ -6,22 +6,23 @@ using Unity;
 
 namespace IoT.WCD.BlockChain.Application.CommandHandlers
 {
-    public class CreateUserCommandHandler : ICommandHandler<CreateUserCommand>
+    public class CreateECGDataCommandHandler : ICommandHandler<CreateECGDataCommand>
     {
-        private readonly IUserService _userService;
+        private readonly IECGDataService _ecgDataService;
 
-        public CreateUserCommandHandler()
+        public CreateECGDataCommandHandler()
         {
-            _userService = IocContainer.Default.Resolve<IUserService>();
+             _ecgDataService = IocContainer.Default.Resolve<IECGDataService>();
         }
-        public void Execute(CreateUserCommand createUserCommand)
+
+        public void Execute(CreateECGDataCommand createUserCommand)
         {
             if (createUserCommand == null)
             {
                 throw new ArgumentNullException(nameof(createUserCommand));
             }
-            
-            _userService.Execute(createUserCommand);
+
+            _ecgDataService.Execute(createUserCommand);
         }
     }
 }

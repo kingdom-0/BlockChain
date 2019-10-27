@@ -17,6 +17,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 
         public UserCreatedEvent(Guid aggregateId, string name, string phoneNumber, string address, DateTime createTime)
         {
+            Id = Guid.NewGuid();
             AggregateId = aggregateId;
             Name = name;
             PhoneNumber = phoneNumber;

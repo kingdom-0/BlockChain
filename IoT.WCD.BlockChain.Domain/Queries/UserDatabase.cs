@@ -13,6 +13,11 @@ namespace IoT.WCD.BlockChain.Domain.Queries
             return Users.FirstOrDefault(x => x.Id == id);
         }
 
+        public UserDto GetByPhoneNumber(string phoneNumber)
+        {
+            return Users.FirstOrDefault(x => x.PhoneNumber == phoneNumber);
+        }
+
         public void Add(UserDto item)
         {
             Users.Add(item);

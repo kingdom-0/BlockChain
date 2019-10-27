@@ -20,7 +20,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
             var user = _userRepository.GetByPhoneNumber(createUserCommand.PhoneNumber);
             if (user != null)
             {
-                throw new Exception("Phone number is registered.");
+                throw new Exception("Phone number was registered.");
             }
             var newUser = new User(createUserCommand.Id,createUserCommand.Name,createUserCommand.PhoneNumber
                 ,createUserCommand.Address,createUserCommand.GenderType)

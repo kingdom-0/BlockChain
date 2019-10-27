@@ -2,6 +2,6 @@
 {
     public interface IUserDatabase : IReadOnlyDatabase<UserDto>
     {
-
+        UserDto GetByPhoneNumber(string phoneNumber);
     }
 }

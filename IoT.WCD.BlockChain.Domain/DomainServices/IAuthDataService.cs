@@ -2,8 +2,7 @@
 
 namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
-    public interface IUserService : IDomainService<CreateUserCommand>
+    public interface IAuthDataService : IDomainService<CreateAuthorizationDataCommand>
     {
-
     }
 }

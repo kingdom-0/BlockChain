@@ -11,8 +11,10 @@ using Unity;
 namespace IoT.WCD.BlockChain.Test.Application
 {
     [TestClass]
-    public class UnitTest
+    public class UserTest
     {
+        private Guid _userId;
+
         [TestInitialize]
         public void Setup()
         {
@@ -20,7 +22,7 @@ namespace IoT.WCD.BlockChain.Test.Application
         }
 
         [TestMethod]
-        public void TestCreateUserCommand()
+        public void CreateUserCommandTest()
         {
             var user = new UserDto
             {
@@ -34,7 +36,25 @@ namespace IoT.WCD.BlockChain.Test.Application
             var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenerType,user.Address,user.Version);
             var commandBus = IocContainer.Default.Resolve<ICommandBus>();
             commandBus.Send(createUserCommand);
+            _userId = user.Id;
+            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
+            var userById = userDb.GetById(_userId);
+        }
 
+        [TestMethod]
+        public void GetUserByIdTest()
+        {
+            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
+            var user = userDb.GetById(_userId);
+            Assert.IsTrue(user != null);
+        }
+
+        [TestMethod]
+        public void GetUsersTest()
+        {
+            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
+            var items = userDb.GetItems();
+            Assert.IsTrue(items.Count==1);
         }
     }
 }

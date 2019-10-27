@@ -6,7 +6,6 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Mementos
 {
     public class UserMemento : Memento
     {
-
         public string Name { get; internal set; }
 
         public string PhoneNumber { get; internal set; }
@@ -17,7 +16,6 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Mementos
 
         public DateTime CreateTime { get; internal set; }
 
-        public int EventVersion { get; internal set; }
 
         public UserMemento(Guid id,string name, string phoneNumber,GenderType genderType,
             string address, DateTime createTime, int eventVersion)

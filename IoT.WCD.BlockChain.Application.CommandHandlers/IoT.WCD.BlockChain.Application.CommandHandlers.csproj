@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHandlerFactory.cs" />
+    <Compile Include="CreateAuthDataCommandHandler.cs" />
     <Compile Include="CreateUserCommandHandler.cs" />
+    <Compile Include="CreateECGDataCommandHandler.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="ICommandHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
