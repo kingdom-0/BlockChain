@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 
 namespace IoT.WCD.BlockChain.Domain.Queries
 {
     public interface IECGDataDatabase:IReadOnlyDatabase<ECGDataDto>
     {
-        List<ECGDataDto> GetECGDataByUserId(Guid userId);
+        PackagedECGDataResult GetECGDataByUserId(Guid userId, string serviceKey);
     }
 }

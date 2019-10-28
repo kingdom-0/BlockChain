@@ -17,6 +17,10 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Storage
 
         private readonly Entities.Impl.BlockChain _chain = new Entities.Impl.BlockChain(Difficulty,GenesisBlock);
 
+        public InMemoryAuthDataStorage()
+        {
+            int i = 0;
+        }
 
         public void Save(IAggregateRoot aggregate)
         {
@@ -32,6 +36,12 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Storage
                 var block = new Block(authorizationData);
                 _chain.Add(block);
             }
+        }
+
+        public IAggregateRoot GetByUserId(Guid userId, string serviceKey)
+        {
+            var block = _chain.Blocks.FirstOrDefault(x => x.Data.UserId == userId && x.Data.ServiceKey == serviceKey);
+            return block?.Data;
         }
     }
 }

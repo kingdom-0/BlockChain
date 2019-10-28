@@ -42,15 +42,14 @@ namespace IoT.WCD.BlockChain.Test.Application
                 new byte[]{0x3,0x4,0x5},DateTime.Now, ecgDataId, -1);
             commandBus.Send(createEcgDataCommand);
             var ecgDataDb = IocContainer.Default.Resolve<IECGDataDatabase>();
-            var ecgDatDtoList = ecgDataDb.GetECGDataByUserId(user.Id);
-            var ecgDataDto = ecgDataDb.GetById(ecgDataId);
 
+            var serviceKey = Guid.NewGuid().ToString();
             var authDataDto = new AuthDataDto
             {
                 Id = Guid.NewGuid(),
                 UserId = user.Id,
                 AuthorizationType = AuthorizationType.ReadAndWrite,
-                ServiceKey = Guid.NewGuid().ToString(),
+                ServiceKey = serviceKey,
                 CreateTime = DateTime.Now
             };
 
@@ -60,6 +59,8 @@ namespace IoT.WCD.BlockChain.Test.Application
             var authDataDb = IocContainer.Default.Resolve<IAuthDataDatabase>();
             var authDataDto1 = authDataDb.GetById(createAuthDataCommand.Id);
 
+            var ecgDatDtoList = ecgDataDb.GetECGDataByUserId(user.Id, serviceKey);
+            var ecgDataDto = ecgDataDb.GetById(ecgDataId);
         }
     }
 }

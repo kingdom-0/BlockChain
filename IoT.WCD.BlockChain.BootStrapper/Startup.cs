@@ -25,7 +25,6 @@ namespace IoT.WCD.BlockChain.BootStrapper
             //ReadOnly
             Register.RegisterType<IUserDatabase, UserDatabase>();
             Register.RegisterType<IECGDataDatabase, ECGDataDatabase>();
-            Register.RegisterType<IECGDataDatabaseProxy, ECGDataDatabaseProxy>();
             Register.RegisterType<IAuthDataDatabase, AuthDataDatabase>();
 
             //Writable

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.Repositories.Storage;
+using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using Unity;
 
@@ -17,9 +19,31 @@ namespace IoT.WCD.BlockChain.Domain.Queries
             _authDataStorage = IocContainer.Default.Resolve<IAuthDataStorage>();
         }
 
+        public PackagedECGDataResult GetECGDataByUserId(Guid userId, string serviceKey)
+        {
+            var authData = _authDataStorage.GetByUserId(userId, serviceKey) as AuthorizationData;
+            if (authData == null)
+            {
+                return PackagedECGDataResult.Empty;
+            }
+
+            if (authData.AuthorizationType == AuthorizationType.Read ||
+                authData.AuthorizationType == AuthorizationType.ReadAndWrite)
+            {
+                var ecgData = EcgDatas.Where(x => x.UserId == userId);
+                return new PackagedECGDataResult(true,ecgData,"Retrieve ECG data successfully.");
+            }
+            else
+            {
+                return new PackagedECGDataResult(false, new List<ECGDataDto>(),
+                    "You have no authorization to gain user ECG data.");
+            }
+        }
+
+
         public ECGDataDto GetById(Guid id)
         {
-            return EcgDatas.FirstOrDefault(x => x.Id == id);
+            throw new NotImplementedException();
         }
 
         public void Add(ECGDataDto item)
@@ -34,12 +58,7 @@ namespace IoT.WCD.BlockChain.Domain.Queries
 
         public List<ECGDataDto> GetItems()
         {
-            return EcgDatas;
-        }
-
-        public List<ECGDataDto> GetECGDataByUserId(Guid userId)
-        {
-            return EcgDatas.Where(x => x.UserId == userId).ToList();
+            throw new NotImplementedException();
         }
     }
 }
