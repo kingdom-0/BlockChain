@@ -16,6 +16,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Mementos
 
         public DateTime CreateTime { get; internal set; }
 
+        public Guid AccessToken { get; internal set; }
 
         public UserMemento(Guid id,string name, string phoneNumber,GenderType genderType,
             string address, DateTime createTime, int eventVersion)

@@ -16,7 +16,9 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
 
         public DateTime CreateTime { get; internal set; }
 
-        public UserCreatedEvent(Guid aggregateId, string name, string phoneNumber, string address, DateTime createTime)
+        public Guid AccessToken { get; internal set; }
+
+        public UserCreatedEvent(Guid aggregateId, string name, string phoneNumber, string address, DateTime createTime, Guid accessToken)
         {
             Id = Guid.NewGuid();
             AggregateId = aggregateId;
@@ -24,6 +26,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.Events
             PhoneNumber = phoneNumber;
             Address = address;
             CreateTime = createTime;
+            AccessToken = accessToken;
         }
     }
 }

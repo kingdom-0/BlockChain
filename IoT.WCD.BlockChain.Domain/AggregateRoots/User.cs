@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Linq;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Domain.Repositories.Mementos;
 using IoT.WCD.BlockChain.Infrastructure.Enums;
+using IoT.WCD.BlockChain.Infrastructure.Utilities;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
     public class User : AggregateRoot,IHandle<UserCreatedEvent>,IOriginator
     {
+        private Guid _privateKey;
         public User()
         {
             
@@ -15,8 +18,8 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 
         public User(Guid id, string name, string phoneNumber, string address, GenderType genderType):base(id)
         {
-            AccessToken = Guid.NewGuid();
-            ApplyChange(new UserCreatedEvent(id,name,phoneNumber,address,DateTime.Now));
+            _privateKey = Guid.NewGuid();
+            ApplyChange(new UserCreatedEvent(id,name,phoneNumber,address,DateTime.Now, _privateKey));
         }
 
         public string Name { get; internal set; }
@@ -29,7 +32,15 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 
         public DateTime CreateTime { get; private set; }
 
-        public Guid AccessToken { get; private set; }
+        public string GetUserKey()
+        {
+            return _privateKey.ToString().GetReverseData();
+        }
+
+        public bool KeyIsValid(string inputKey)
+        {
+            return _privateKey.ToString() == inputKey;
+        }
 
         public void Handle(UserCreatedEvent e)
         {
@@ -38,6 +49,7 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
             PhoneNumber = e.PhoneNumber;
             Address = e.Address;
             GenderType = e.GenderType;
+            _privateKey = e.AccessToken;
         }
 
         public Memento GetMemento()
@@ -59,6 +71,7 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
             Address = userMemento.Address;
             GenderType = userMemento.GenderType;
             Version = userMemento.Version;
+            _privateKey = userMemento.AccessToken;
         }
     }
 }

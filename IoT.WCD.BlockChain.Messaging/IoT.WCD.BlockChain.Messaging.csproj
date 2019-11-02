@@ -54,6 +54,10 @@
       <Project>{0326144C-A895-4D81-B405-1954C1C4F5B1}</Project>
       <Name>IoT.WCD.BlockChain.Application.Commands</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts\IoT.WCD.BlockChain.Infrastructure.IoC.Contracts.csproj">
+      <Project>{64EA9BB9-FACE-4FE6-A46A-E50E722299E5}</Project>
+      <Name>IoT.WCD.BlockChain.Infrastructure.IoC.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
       <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
       <Name>IoT.WCD.BlockChain.Infrastructure</Name>

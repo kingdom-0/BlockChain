@@ -12,7 +12,7 @@ namespace IoT.WCD.BlockChain.Application.CommandHandlers
 
         public CreateUserCommandHandler()
         {
-            _userService = IocContainer.Default.Resolve<IUserService>();
+            _userService = Ioc.Instance.Resolve<IUserService>();
         }
         public void Execute(CreateUserCommand createUserCommand)
         {

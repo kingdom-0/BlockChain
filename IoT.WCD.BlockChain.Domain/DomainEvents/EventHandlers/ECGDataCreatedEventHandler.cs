@@ -7,15 +7,14 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
 {
     public class ECGDataCreatedEventHandler : IEventHandler<ECGDataCreatedEvent>
     {
-        private readonly IECGDataDatabase _ecgDataDatabase;
-
         public ECGDataCreatedEventHandler()
         {
-            _ecgDataDatabase = IocContainer.Default.Resolve<IECGDataDatabase>();
+            
         }
 
         public void Handle(ECGDataCreatedEvent @event)
         {
+            var ecgDataDatabase = Ioc.Instance.Resolve<IECGDataDatabase>();
             var ecgDataDto = new ECGDataDto
             {
                 Id = @event.AggregateId,
@@ -25,7 +24,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
                 CreateTime = @event.CreateTime
             };
 
-            _ecgDataDatabase.Add(ecgDataDto);
+            ecgDataDatabase.Add(ecgDataDto);
 
             //TODO: Send email to target user
         }

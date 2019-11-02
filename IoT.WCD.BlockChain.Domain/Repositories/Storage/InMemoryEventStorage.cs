@@ -5,6 +5,7 @@ using IoT.WCD.BlockChain.Domain;
 using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.DomainEvents;
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
+using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Repository.Storage
@@ -13,13 +14,11 @@ namespace IoT.WCD.BlockChain.Repository.Storage
     {
         private List<IEvent> _events;
         private List<Memento> _mementos;
-        private readonly IEventBus _eventBus;
 
-        public InMemoryEventStorage(IEventBus eventBus)
+        public InMemoryEventStorage()
         {
             _events = new List<IEvent>();
             _mementos = new List<Memento>();
-            _eventBus = eventBus;
         }
 
         public IEnumerable<IEvent> GetEvents(Guid aggregateId)
@@ -58,10 +57,11 @@ namespace IoT.WCD.BlockChain.Repository.Storage
                 _events.Add(uncommittedChange);
             }
 
+            var eventBus = Ioc.Instance.Resolve<IEventBus>();
             foreach (var uncommittedChange in uncommittedChanges)
             {
                 dynamic targetEvent = Convert.ChangeType(uncommittedChange, uncommittedChange.GetType());
-                _eventBus.Publish(targetEvent);
+                eventBus.Publish(targetEvent);
             }
         }
 

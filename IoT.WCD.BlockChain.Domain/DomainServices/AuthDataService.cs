@@ -9,16 +9,16 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
     public class AuthDataService : IAuthDataService
     {
-        private readonly IAuthDataRepository _authDataRepository;
 
         public AuthDataService()
         {
-            _authDataRepository = IocContainer.Default.Resolve<IAuthDataRepository>();
+            
         }
 
         public void Execute(CreateAuthorizationDataCommand command)
         {
-            var authData = _authDataRepository.GetById(command.Id);
+            var authDataRepository = Ioc.Instance.Resolve<IAuthDataRepository>();
+            var authData = authDataRepository.GetById(command.Id);
             if (authData != null)
             {
                 throw new Exception($"Authorization data with id {command.Id} was registered.");
@@ -27,7 +27,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
             var authDataInstance = new AuthorizationData(command.Id, command.UserId, command.ServiceKey,
                 command.AuthorizationType, command.CreateTime);
 
-            _authDataRepository.Save(authDataInstance, authDataInstance.Version);
+            authDataRepository.Save(authDataInstance, authDataInstance.Version);
         }
     }
 }

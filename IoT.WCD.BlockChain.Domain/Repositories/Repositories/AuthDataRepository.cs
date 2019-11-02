@@ -9,17 +9,17 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Repositories
 {
     public class AuthDataRepository : BaseRepository<AuthorizationData>, IAuthDataRepository
     {
-        private readonly IAuthDataStorage _authDataStorage;
 
         public AuthDataRepository()
         {
-            _authDataStorage = IocContainer.Default.Resolve<IAuthDataStorage>();
+            
         }
 
         public override void Save(IAggregateRoot aggregateRoot, int expectedVersion)
         {
             base.Save(aggregateRoot, expectedVersion);
-            _authDataStorage.Save(aggregateRoot);
+            var authDataStorage = Ioc.Instance.Resolve<IAuthDataStorage>();
+            authDataStorage.Save(aggregateRoot);
         }
 
         public override AuthorizationData GetById(Guid id)

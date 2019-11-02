@@ -14,17 +14,17 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
     public abstract class BaseRepository<TAggregateRoot>:IRepository<TAggregateRoot>
         where TAggregateRoot:class,IAggregateRoot,new()
     {
-        private readonly IEventStorage _eventStorage;
         private static readonly object Locker = new object();
 
         protected BaseRepository()
         {
-            _eventStorage = IocContainer.Default.Resolve<IEventStorage>();
+            
         }
 
         public virtual TAggregateRoot GetById(Guid id)
         {
-            var memento = _eventStorage.GetMemento<Memento>(id);
+            var eventStorage = Ioc.Instance.Resolve<IEventStorage>();
+            var memento = eventStorage.GetMemento<Memento>(id);
             if (memento == null)
             {
                 return default(TAggregateRoot);
@@ -34,7 +34,8 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
 
         public virtual TAggregateRoot GetBySearchKey(string searchKey)
         {
-            var memento = _eventStorage.GetMemento<Memento>(searchKey);
+            var eventStorage = Ioc.Instance.Resolve<IEventStorage>();
+            var memento = eventStorage.GetMemento<Memento>(searchKey);
             if (memento == null)
             {
                 return default(TAggregateRoot);
@@ -44,14 +45,15 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
 
         private TAggregateRoot GetBySpecCondition(Memento memento)
         {
+            var eventStorage = Ioc.Instance.Resolve<IEventStorage>();
             IEnumerable<IEvent> events;
             if (memento != null)
             {
-                events = _eventStorage.GetEvents(memento.Id).Where(e => e.Version >= memento.Version);
+                events = eventStorage.GetEvents(memento.Id).Where(e => e.Version >= memento.Version);
             }
             else
             {
-                events = _eventStorage.GetEvents(memento.Id);
+                events = eventStorage.GetEvents(memento.Id);
             }
 
             var instance = new TAggregateRoot();
@@ -66,6 +68,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
 
         public virtual void Save(IAggregateRoot aggregateRoot, int expectedVersion)
         {
+            var eventStorage = Ioc.Instance.Resolve<IEventStorage>();
             if (!aggregateRoot.GetUncommittedChanges().Any())
             {
                 //TODO: In order to debug, save single aggregate instance.
@@ -85,7 +88,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
                     throw new Exception($"Entity {aggregateRoot} has been modified previously");
                 }
 
-                _eventStorage.Save(aggregateRoot);
+                eventStorage.Save(aggregateRoot);
             }
         }
     }

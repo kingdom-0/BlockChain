@@ -8,21 +8,20 @@ namespace IoT.WCD.BlockChain.Application.CommandHandlers
 {
     public class CreateAuthDataCommandHandler : ICommandHandler<CreateAuthorizationDataCommand>
     {
-        private readonly IAuthDataService _authDataService;
-
         public CreateAuthDataCommandHandler()
         {
-            _authDataService = IocContainer.Default.Resolve<IAuthDataService>();
+            
         }
 
         public void Execute(CreateAuthorizationDataCommand command)
         {
+            var authDataService = Ioc.Instance.Resolve<IAuthDataService>();
             if (command == null)
             {
                 throw new ArgumentNullException(nameof(command));
             }
 
-            _authDataService.Execute(command);
+            authDataService.Execute(command);
         }
     }
 }

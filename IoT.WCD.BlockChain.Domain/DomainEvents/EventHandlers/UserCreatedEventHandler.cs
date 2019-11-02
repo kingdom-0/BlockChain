@@ -11,7 +11,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
 
         public UserCreatedEventHandler()
         {
-            _userDatabase = IocContainer.Default.Resolve<IUserDatabase>();
+            _userDatabase = Ioc.Instance.Resolve<IUserDatabase>();
         }
 
         public void Handle(UserCreatedEvent handle)

@@ -12,7 +12,7 @@ namespace IoT.WCD.BlockChain.Application.CommandHandlers
 
         public CreateECGDataCommandHandler()
         {
-             _ecgDataService = IocContainer.Default.Resolve<IECGDataService>();
+             _ecgDataService = Ioc.Instance.Resolve<IECGDataService>();
         }
 
         public void Execute(CreateECGDataCommand createUserCommand)

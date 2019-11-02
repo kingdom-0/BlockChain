@@ -8,15 +8,15 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
 {
     public class AuthDataCreatedEventHandler : IEventHandler<AuthDataCreatedEvent>
     {
-        private readonly IAuthDataDatabase _authDataDatabase;
 
         public AuthDataCreatedEventHandler()
         {
-            _authDataDatabase = IocContainer.Default.Resolve<IAuthDataDatabase>();
+            
         }
 
         public void Handle(AuthDataCreatedEvent @event)
         {
+            var authDataDatabase = Ioc.Instance.Resolve<IAuthDataDatabase>();
             var authDataDto = new AuthDataDto
             {
                 Id = @event.AggregateId,
@@ -27,7 +27,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
                 Version = @event.Version
             };
 
-            _authDataDatabase.Add(authDataDto);
+            authDataDatabase.Add(authDataDto);
 
             //TODO: Send email to target user. 
         }

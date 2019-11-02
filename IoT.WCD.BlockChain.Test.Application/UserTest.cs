@@ -6,14 +6,13 @@ using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Messaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Unity;
 
 namespace IoT.WCD.BlockChain.Test.Application
 {
     [TestClass]
     public class UserTest
     {
-        private Guid _userId;
+        private static Guid _userId;
 
         [TestInitialize]
         public void Setup()
@@ -34,17 +33,18 @@ namespace IoT.WCD.BlockChain.Test.Application
                 Version = -1
             };
             var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenerType,user.Address,user.Version);
-            var commandBus = IocContainer.Default.Resolve<ICommandBus>();
+            var commandBus = Ioc.Instance.Resolve<ICommandBus>();
             commandBus.Send(createUserCommand);
             _userId = user.Id;
-            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
-            var userById = userDb.GetById(_userId);
+            var userDb = Ioc.Instance.Resolve<IUserDatabase>();
+            var userInstance = userDb.GetById(_userId);
+            Assert.IsNotNull(userInstance);
         }
 
         [TestMethod]
         public void GetUserByIdTest()
         {
-            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
+            var userDb = Ioc.Instance.Resolve<IUserDatabase>();
             var user = userDb.GetById(_userId);
             Assert.IsTrue(user != null);
         }
@@ -52,7 +52,7 @@ namespace IoT.WCD.BlockChain.Test.Application
         [TestMethod]
         public void GetUsersTest()
         {
-            var userDb = IocContainer.Default.Resolve<IUserDatabase>();
+            var userDb = Ioc.Instance.Resolve<IUserDatabase>();
             var items = userDb.GetItems();
             Assert.IsTrue(items.Count==1);
         }

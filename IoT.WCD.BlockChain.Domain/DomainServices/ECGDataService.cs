@@ -9,23 +9,23 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
     public class ECGDataService:IECGDataService
     {
-        private readonly IECGDataRepository _ecgDataRepository;
 
         public ECGDataService()
         {
-            _ecgDataRepository = IocContainer.Default.Resolve<IECGDataRepository>();
+            
         }
 
         public void Execute(CreateECGDataCommand command)
         {
-            var ecgData = _ecgDataRepository.GetById(command.Id);
+            var  ecgDataRepository = Ioc.Instance.Resolve<IECGDataRepository>();
+            var ecgData = ecgDataRepository.GetById(command.Id);
             if (ecgData != null)
             {
                 throw new Exception("ECG data was added.");
             }
 
             var ecgDataInstance = new ECGData(command.Id,command.UserId,command.RawData,command.ImpedanceData,command.CreateTime);
-            _ecgDataRepository.Save(ecgDataInstance,ecgDataInstance.Version);
+            ecgDataRepository.Save(ecgDataInstance,ecgDataInstance.Version);
 
         }
     }

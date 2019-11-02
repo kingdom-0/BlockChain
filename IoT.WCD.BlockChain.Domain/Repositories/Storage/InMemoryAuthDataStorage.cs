@@ -19,7 +19,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Storage
 
         public InMemoryAuthDataStorage()
         {
-            int i = 0;
+            
         }
 
         public void Save(IAggregateRoot aggregate)

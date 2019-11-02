@@ -9,39 +9,47 @@ using IoT.WCD.BlockChain.Domain.Repositories.Storage;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Messaging;
 using IoT.WCD.BlockChain.Repository.Storage;
-using Unity;
 
 namespace IoT.WCD.BlockChain.BootStrapper
 {
     public class Startup
     {
-        private static readonly UnityContainer Register = IocContainer.Default;
-
+        private static bool _initialized;
         public static void Configure()
         {
-            Register.RegisterType<ICommandBus, CommandBus>();
-            Register.RegisterType<IEventBus, EventBus>();
+            if (_initialized)
+            {
+                return;
+            }
 
-            //ReadOnly
-            Register.RegisterType<IUserDatabase, UserDatabase>();
-            Register.RegisterType<IECGDataDatabase, ECGDataDatabase>();
-            Register.RegisterType<IAuthDataDatabase, AuthDataDatabase>();
+            _initialized = true;
+
+            Ioc.Instance.RegisterType(typeof(ICommandBus),new CommandBus());
+            Ioc.Instance.RegisterType(typeof(IEventBus),new EventBus());
+
+            //Readonly
+            Ioc.Instance.RegisterType(typeof(IUserDatabase),new UserDatabase());
+            Ioc.Instance.RegisterType(typeof(IECGDataDatabase),new ECGDataDatabase());
+            Ioc.Instance.RegisterType(typeof(IAuthDataDatabase),new AuthDataDatabase());
 
             //Writable
-            Register.RegisterType<ICommandHandlerFactory, CommandHandlerFactory>();
+            Ioc.Instance.RegisterType(typeof(ICommandHandlerFactory),new CommandHandlerFactory());
 
-            Register.RegisterType<IECGDataService, ECGDataService>();
-            Register.RegisterType<IUserService, UserService>();
-            Register.RegisterType<IAuthDataService, AuthDataService>();
-            
-            Register.RegisterType<IUserRepository, UserRepository>();
-            Register.RegisterType<IECGDataRepository, ECGDataRepoistory>();
-            Register.RegisterType<IAuthDataRepository, AuthDataRepository>();
-            
-            Register.RegisterType<IEventStorage, InMemoryEventStorage>();
-            Register.RegisterType<IAuthDataStorage, InMemoryAuthDataStorage>();
 
-            Register.RegisterType<IEventHandlerFactory, EventHandlerFactory>();
+            Ioc.Instance.RegisterType(typeof(IECGDataService), new ECGDataService());
+            Ioc.Instance.RegisterType(typeof(IUserService),new UserService());
+
+            Ioc.Instance.RegisterType(typeof(IAuthDataService), new AuthDataService());
+            
+            Ioc.Instance.RegisterType(typeof(IUserRepository), new UserRepository());
+            Ioc.Instance.RegisterType(typeof(IECGDataRepository), new ECGDataRepoistory());
+            Ioc.Instance.RegisterType(typeof(IAuthDataRepository), new AuthDataRepository());
+            
+            Ioc.Instance.RegisterType(typeof(IEventStorage),new InMemoryEventStorage());
+            Ioc.Instance.RegisterType(typeof(IAuthDataStorage),new InMemoryAuthDataStorage());
+            Ioc.Instance.RegisterType(typeof(IAuthDataDatabase),new AuthDataDatabase());
+
+            Ioc.Instance.RegisterType(typeof(IEventHandlerFactory),new EventHandlerFactory());
         }
     }
 }

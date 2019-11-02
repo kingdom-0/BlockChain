@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using IoT.WCD.BlockChain.Domain.AggregateRoots;
 using IoT.WCD.BlockChain.Domain.Entities.Impl;
 using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
@@ -34,6 +35,13 @@ namespace IoT.WCD.BlockChain.Test
                 AuthorizationType.ReadAndWrite, DateTime.Now);
             _chain.Add(new Block(authorizationData));
             Assert.AreEqual(2,_chain.Blocks.Count);
+        }
+
+        [TestMethod]
+        public void TestBlockChainAuthorizationData()
+        {
+            var authData = _chain.Blocks.FirstOrDefault(x => x.Data.ServiceKey == "test key");
+            Assert.IsNotNull(authData);
         }
     }
 }

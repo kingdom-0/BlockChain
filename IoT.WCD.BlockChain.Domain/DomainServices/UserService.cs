@@ -9,15 +9,16 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _userRepository;
 
         public UserService()
         {
-            _userRepository = IocContainer.Default.Resolve<IUserRepository>();
+            
         }
+
         public void Execute(CreateUserCommand createUserCommand)
         {
-            var user = _userRepository.GetByPhoneNumber(createUserCommand.PhoneNumber);
+            var userRepository = Ioc.Instance.Resolve<IUserRepository>();
+            var user = userRepository.GetByPhoneNumber(createUserCommand.PhoneNumber);
             if (user != null)
             {
                 throw new Exception("Phone number was registered.");
@@ -27,7 +28,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
             {
                 Version = -1
             };
-            _userRepository.Save(newUser,newUser.Version);
+            userRepository.Save(newUser,newUser.Version);
         }
     }
 }

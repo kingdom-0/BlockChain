@@ -1,21 +1,21 @@
 ﻿using IoT.WCD.BlockChain.Application.CommandHandlers;
 using IoT.WCD.BlockChain.Application.Commands;
 using IoT.WCD.BlockChain.Infrastructure.Exceptions;
+using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 
 namespace IoT.WCD.BlockChain.Messaging
 {
     public class CommandBus : ICommandBus
     {
-        private readonly ICommandHandlerFactory _commandHandlerFactory;
 
-        public CommandBus(ICommandHandlerFactory commandHandlerFactory)
+        public CommandBus()
         {
-            _commandHandlerFactory = commandHandlerFactory;
         }
 
         public void Send<TCommand>(TCommand command) where TCommand : Command
         {
-            var handler = _commandHandlerFactory.GetHandler<TCommand>();
+            var commandHandlerFactory = Ioc.Instance.Resolve<ICommandHandlerFactory>();
+            var handler = commandHandlerFactory.GetHandler<TCommand>();
             if (handler != null)
             {
                 handler.Execute(command);
