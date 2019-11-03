@@ -5,6 +5,7 @@ using IoT.WCD.BlockChain.Domain.Queries;
 using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Messaging;
+using IoT.WCD.BlockChain.ValueObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IoT.WCD.BlockChain.Test.Application

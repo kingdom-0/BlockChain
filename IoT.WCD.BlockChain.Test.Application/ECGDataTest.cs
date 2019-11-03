@@ -8,6 +8,7 @@ using IoT.WCD.BlockChain.Infrastructure.Exceptions;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Infrastructure.Utilities;
 using IoT.WCD.BlockChain.Messaging;
+using IoT.WCD.BlockChain.ValueObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IoT.WCD.BlockChain.Test.Application

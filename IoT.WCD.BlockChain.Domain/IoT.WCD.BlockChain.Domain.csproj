@@ -93,16 +93,13 @@
     <Compile Include="Entities\Interfaces\IBlockChain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\AuthDataDatabase.cs" />
-    <Compile Include="Queries\AuthDataDto.cs" />
     <Compile Include="Queries\ECGDataDatabase.cs" />
-    <Compile Include="Queries\ECGDataDto.cs" />
     <Compile Include="Queries\IAuthDataDatabase.cs" />
     <Compile Include="Queries\IECGDataDatabase.cs" />
     <Compile Include="Queries\IReadOnlyDatabase.cs" />
     <Compile Include="Queries\IUserDatabase.cs" />
     <Compile Include="Queries\PackagedECGDataResult.cs" />
     <Compile Include="Queries\UserDatabase.cs" />
-    <Compile Include="Queries\UserDto.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Mementos\AuthDataMemento.cs" />
     <Compile Include="Repositories\Mementos\ECGDataMemento.cs" />

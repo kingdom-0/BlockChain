@@ -8,6 +8,7 @@ using IoT.WCD.BlockChain.Infrastructure.Enums;
 using IoT.WCD.BlockChain.Infrastructure.Exceptions;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Infrastructure.Utilities;
+using IoT.WCD.BlockChain.ValueObjects;
 using Unity;
 
 namespace IoT.WCD.BlockChain.Domain.Queries

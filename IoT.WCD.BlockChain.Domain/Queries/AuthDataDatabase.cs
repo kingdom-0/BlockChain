@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using IoT.WCD.BlockChain.ValueObjects;
 
 namespace IoT.WCD.BlockChain.Domain.Queries
 {

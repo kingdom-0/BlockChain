@@ -2,6 +2,7 @@
 using IoT.WCD.BlockChain.Domain.DomainEvents.Events;
 using IoT.WCD.BlockChain.Domain.Queries;
 using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
+using IoT.WCD.BlockChain.ValueObjects;
 using Unity;
 
 namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
