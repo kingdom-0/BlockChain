@@ -62,11 +62,13 @@
     <Compile Include="DomainEvents\EventHandlers\AuthDataCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\ECGDataCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\EventHandlerFactory.cs" />
+    <Compile Include="DomainEvents\EventHandlers\UserActiveTimeChangedEventHandler.cs" />
     <Compile Include="DomainEvents\EventHandlers\UserCreatedEventHandler.cs" />
     <Compile Include="DomainEvents\Events\AuthDataCreatedEvent.cs" />
     <Compile Include="DomainEvents\Events\ECGDataCreatedEvent.cs" />
     <Compile Include="DomainEvents\Events\Event.cs" />
     <Compile Include="DomainEvents\Events\IHandle.cs" />
+    <Compile Include="DomainEvents\Events\UserActiveTimeChangedEvent.cs" />
     <Compile Include="DomainEvents\Events\UserCreatedEvent.cs" />
     <Compile Include="DomainServices\AuthDataService.cs" />
     <Compile Include="DomainServices\ECGDataService.cs" />

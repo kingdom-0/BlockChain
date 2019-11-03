@@ -17,7 +17,8 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
 
         public void Execute(CreateECGDataCommand command)
         {
-            var  ecgDataRepository = Ioc.Instance.Resolve<IECGDataRepository>();
+            var ecgDataRepository = Ioc.Instance.Resolve<IECGDataRepository>();
+            
             var ecgData = ecgDataRepository.GetById(command.Id);
             if (ecgData != null)
             {
@@ -27,6 +28,8 @@ namespace IoT.WCD.BlockChain.Domain.DomainServices
             var ecgDataInstance = new ECGData(command.Id,command.UserId,command.RawData,command.ImpedanceData,command.CreateTime);
             ecgDataRepository.Save(ecgDataInstance,ecgDataInstance.Version);
 
+            var userRepository = Ioc.Instance.Resolve<IUserRepository>();
+            var user = userRepository.GetById(command.UserId);
         }
     }
 }

@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.ValueObjects", "IoT.WCD.BlockChain.ValueObjects\IoT.WCD.BlockChain.ValueObjects.csproj", "{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Communication", "IoT.WCD.BlockChain.Communication\IoT.WCD.BlockChain.Communication.csproj", "{206C755C-4264-4F0E-81D8-293A686E5D83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206C755C-4264-4F0E-81D8-293A686E5D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206C755C-4264-4F0E-81D8-293A686E5D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206C755C-4264-4F0E-81D8-293A686E5D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206C755C-4264-4F0E-81D8-293A686E5D83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

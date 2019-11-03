@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using IoT.WCD.BlockChain.Infrastructure.Enums;
 
-namespace IoT.WCD.BlockChain.Domain.Queries
+namespace IoT.WCD.BlockChain.ValueObjects
 {
     public class UserDto
     {

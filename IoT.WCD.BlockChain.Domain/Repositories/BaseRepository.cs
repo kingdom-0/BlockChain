@@ -49,7 +49,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories
             IEnumerable<IEvent> events;
             if (memento != null)
             {
-                events = eventStorage.GetEvents(memento.Id).Where(e => e.Version >= memento.Version);
+                events = eventStorage.GetEvents(memento.Id);
             }
             else
             {

@@ -28,11 +28,11 @@ namespace IoT.WCD.BlockChain.Test.Application
                 Id = Guid.NewGuid(),
                 Name = "admin",
                 PhoneNumber = "18021578599",
-                GenerType = GenderType.Female,
+                GenderType = GenderType.Female,
                 Address = "人民路8号",
                 Version = -1
             };
-            var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenerType,user.Address,user.Version);
+            var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenderType,user.Address,user.Version);
             var commandBus = Ioc.Instance.Resolve<ICommandBus>();
             commandBus.Send(createUserCommand);
             _userId = user.Id;

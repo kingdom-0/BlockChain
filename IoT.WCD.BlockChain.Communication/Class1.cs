@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IoT.WCD.BlockChain.ValueObjects
+namespace IoT.WCD.BlockChain.Communication
 {
     public class Class1
     {
+        public void Test()
+        {
+            
+        }
     }
 }

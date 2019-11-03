@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0326144C-A895-4D81-B405-1954C1C4F5B1}</ProjectGuid>
+    <ProjectGuid>{206C755C-4264-4F0E-81D8-293A686E5D83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IoT.WCD.BlockChain.Application.Commands</RootNamespace>
-    <AssemblyName>IoT.WCD.BlockChain.Application.Commands</AssemblyName>
+    <RootNamespace>IoT.WCD.BlockChain.Communication</RootNamespace>
+    <AssemblyName>IoT.WCD.BlockChain.Communication</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeUserActiveTimeCommand.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="CreateAuthorizationDataCommand.cs" />
-    <Compile Include="CreateECGDataCommand.cs" />
-    <Compile Include="CreateUserCommand.cs" />
-    <Compile Include="ICommand.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
-      <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
-      <Name>IoT.WCD.BlockChain.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

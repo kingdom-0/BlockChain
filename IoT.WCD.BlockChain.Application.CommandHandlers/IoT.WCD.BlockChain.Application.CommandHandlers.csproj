@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeUserActiveTimeCommandHandler.cs" />
     <Compile Include="CommandHandlerFactory.cs" />
     <Compile Include="CreateAuthDataCommandHandler.cs" />
     <Compile Include="CreateUserCommandHandler.cs" />

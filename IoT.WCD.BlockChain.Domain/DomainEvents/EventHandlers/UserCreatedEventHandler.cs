@@ -22,7 +22,7 @@ namespace IoT.WCD.BlockChain.Domain.DomainEvents.EventHandlers
                 Version = handle.Version,
                 Name = handle.Name,
                 PhoneNumber = handle.PhoneNumber,
-                GenerType = handle.GenderType,
+                GenderType = handle.GenderType,
                 Address = handle.Address,
                 CreateTime = handle.CreateTime
             };

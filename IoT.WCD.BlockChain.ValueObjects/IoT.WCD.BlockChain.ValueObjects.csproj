@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AuthDataDto.cs" />
+    <Compile Include="ECGDataDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure\IoT.WCD.BlockChain.Infrastructure.csproj">
+      <Project>{B99FEAA5-60A6-4F66-B75D-474F64E4A20D}</Project>
+      <Name>IoT.WCD.BlockChain.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

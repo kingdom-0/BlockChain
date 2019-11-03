@@ -16,14 +16,21 @@ namespace IoT.WCD.BlockChain.Domain.Queries
     {
 
         private static readonly List<ECGDataDto> EcgDatas = new List<ECGDataDto>();
-
+        private readonly IUserRepository _userRepository;
         public ECGDataDatabase()
         {
-            
+            _userRepository = Ioc.Instance.Resolve<IUserRepository>();
         }
 
         public PackagedECGDataResult GetUserECGDataByServiceKey(Guid userId, string serviceKey)
         {
+            var user = _userRepository.GetById(userId);
+            if (DateTime.Now.Subtract(user.ActiveTime).TotalDays >= 7)
+            {
+                var ecgData = EcgDatas.Where(x => x.UserId == userId);
+                return new PackagedECGDataResult(true,ecgData,"Intelligent contract came into effect, Retrieve ECG data successfully.");
+            }
+
             var authDataStorage = Ioc.Instance.Resolve<IAuthDataStorage>();
             var authData = authDataStorage.GetByUserId(userId, serviceKey) as AuthorizationData;
             if (authData == null)

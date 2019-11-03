@@ -8,7 +8,9 @@ using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
-    public class User : AggregateRoot,IHandle<UserCreatedEvent>,IOriginator
+    public class User : AggregateRoot,IHandle<UserCreatedEvent>,
+        IHandle<UserActiveTimeChangedEvent>,
+        IOriginator
     {
         private Guid _privateKey;
         public User()
@@ -19,6 +21,7 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
         public User(Guid id, string name, string phoneNumber, string address, GenderType genderType):base(id)
         {
             _privateKey = Guid.NewGuid();
+            ActiveTime = DateTime.Now;
             ApplyChange(new UserCreatedEvent(id,name,phoneNumber,address,DateTime.Now, _privateKey));
         }
 
@@ -31,6 +34,9 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
         public string Address { get; internal set; }
 
         public DateTime CreateTime { get; private set; }
+
+        //智能合约
+        public DateTime ActiveTime { get; private set; }
 
         public string GetUserKey()
         {
@@ -50,6 +56,12 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
             Address = e.Address;
             GenderType = e.GenderType;
             _privateKey = e.AccessToken;
+        }
+
+        public void ChangeActiveTime(DateTime newActiveTime)
+        {
+            ActiveTime = newActiveTime;
+            ApplyChange(new UserActiveTimeChangedEvent(newActiveTime));
         }
 
         public Memento GetMemento()
@@ -72,6 +84,11 @@ namespace IoT.WCD.BlockChain.Domain.AggregateRoots
             GenderType = userMemento.GenderType;
             Version = userMemento.Version;
             _privateKey = userMemento.AccessToken;
+        }
+
+        public void Handle(UserActiveTimeChangedEvent e)
+        {
+            ActiveTime = e.NewActiveTime;
         }
     }
 }

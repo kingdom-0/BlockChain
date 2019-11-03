@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using IoT.WCD.BlockChain.Application.Commands;
 using IoT.WCD.BlockChain.BootStrapper;
 using IoT.WCD.BlockChain.Domain.Queries;
@@ -10,7 +9,6 @@ using IoT.WCD.BlockChain.Infrastructure.IoC.Contracts;
 using IoT.WCD.BlockChain.Infrastructure.Utilities;
 using IoT.WCD.BlockChain.Messaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Unity;
 
 namespace IoT.WCD.BlockChain.Test.Application
 {
@@ -35,11 +33,11 @@ namespace IoT.WCD.BlockChain.Test.Application
                 Id = Guid.NewGuid(),
                 Name = "admin",
                 PhoneNumber = "18021578599",
-                GenerType = GenderType.Female,
+                GenderType = GenderType.Female,
                 Address = "Suzhou,SIP.",
                 Version = -1
             };
-            var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenerType,user.Address,user.Version);
+            var createUserCommand = new CreateUserCommand(user.Id, user.Name,user.PhoneNumber,user.GenderType,user.Address,user.Version);
             var commandBus = Ioc.Instance.Resolve<ICommandBus>();
             commandBus.Send(createUserCommand);
             var userDb = Ioc.Instance.Resolve<IUserDatabase>();
@@ -88,6 +86,14 @@ namespace IoT.WCD.BlockChain.Test.Application
             var ecgDataDb = Ioc.Instance.Resolve<IECGDataDatabase>();
             var ecgDatDtoResult = ecgDataDb.GetUserECGDataByServiceKey(_userId, ServiceKey);
             Assert.AreEqual(ecgDatDtoResult.Result,true);
+        }
+
+        [TestMethod]
+        public void RetrieveEcgDataWithIntelligentContractTest()
+        {
+            var ecgDataDb = Ioc.Instance.Resolve<IECGDataDatabase>();
+            var ecgDatDtoResult = ecgDataDb.GetUserECGDataByServiceKey(_userId, string.Empty);
+            Assert.AreNotEqual(ecgDatDtoResult.Result,true);
         }
 
         [TestMethod]
