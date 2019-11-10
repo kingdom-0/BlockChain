@@ -48,11 +48,5 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj">
-      <Project>{B8ADD744-A84A-4662-9FF9-987032EB06C3}</Project>
-      <Name>IoT.WCD.BlockChain.Application.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Entry", "IoT.WCD.BlockChain.Entry\IoT.WCD.BlockChain.Entry.csproj", "{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Test", "IoT.WCD.BlockChain.Test\IoT.WCD.BlockChain.Test.csproj", "{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Interfaces", "IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj", "{B8ADD744-A84A-4662-9FF9-987032EB06C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Application.Services", "IoT.WCD.BlockChain.Application.Services\IoT.WCD.BlockChain.Application.Services.csproj", "{0AB0792D-6A18-40B1-8571-2120BFED0653}"
 EndProject
@@ -37,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.ValueObjects", "IoT.WCD.BlockChain.ValueObjects\IoT.WCD.BlockChain.ValueObjects.csproj", "{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.Communication", "IoT.WCD.BlockChain.Communication\IoT.WCD.BlockChain.Communication.csproj", "{206C755C-4264-4F0E-81D8-293A686E5D83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.WCD.BlockChain.UI", "IoT.WCD.BlockChain.UI\IoT.WCD.BlockChain.UI.csproj", "{2D77E0DB-7C0E-425A-806C-D468FC2E02AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +41,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDA4DD8E-EF3B-43E4-BA5A-AC04EBBE501A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DAAD7D-FDFD-4864-8976-7612F685A3A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8ADD744-A84A-4662-9FF9-987032EB06C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB0792D-6A18-40B1-8571-2120BFED0653}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -113,10 +101,10 @@ Global
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEC264AA-4586-4C6A-9C00-BD2CBDECD99D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{206C755C-4264-4F0E-81D8-293A686E5D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{206C755C-4264-4F0E-81D8-293A686E5D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{206C755C-4264-4F0E-81D8-293A686E5D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{206C755C-4264-4F0E-81D8-293A686E5D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D77E0DB-7C0E-425A-806C-D468FC2E02AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D77E0DB-7C0E-425A-806C-D468FC2E02AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D77E0DB-7C0E-425A-806C-D468FC2E02AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D77E0DB-7C0E-425A-806C-D468FC2E02AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

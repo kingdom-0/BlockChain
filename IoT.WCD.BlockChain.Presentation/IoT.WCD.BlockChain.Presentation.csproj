@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Services\IoT.WCD.BlockChain.Application.Services.csproj">
+      <Project>{0ab0792d-6a18-40b1-8571-2120bfed0653}</Project>
+      <Name>IoT.WCD.BlockChain.Application.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -58,10 +58,6 @@
       <Project>{B9F2D3CC-C28A-4ED4-BBFA-DA0CEC8926D7}</Project>
       <Name>IoT.WCD.BlockChain.Application.CommandHandlers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Interfaces\IoT.WCD.BlockChain.Application.Interfaces.csproj">
-      <Project>{B8ADD744-A84A-4662-9FF9-987032EB06C3}</Project>
-      <Name>IoT.WCD.BlockChain.Application.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IoT.WCD.BlockChain.Application.Services\IoT.WCD.BlockChain.Application.Services.csproj">
       <Project>{0AB0792D-6A18-40B1-8571-2120BFED0653}</Project>
       <Name>IoT.WCD.BlockChain.Application.Services</Name>
