@@ -67,12 +67,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IoT.WCD.BlockChain.Infrastructure.Interfaces\IoT.WCD.BlockChain.Infrastructure.Interfaces.csproj">
-      <Project>{10C1C8EE-4399-4CFC-876A-A152B7F3F340}</Project>
-      <Name>IoT.WCD.BlockChain.Infrastructure.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

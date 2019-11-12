@@ -7,7 +7,7 @@ using IoT.WCD.BlockChain.Infrastructure.Utilities;
 namespace IoT.WCD.BlockChain.Domain.AggregateRoots
 {
     [Serializable]
-    public class AggregateRoot : IAggregateRoot,IDataProvider
+    public abstract class AggregateRoot : IAggregateRoot,IDataProvider
     {
         private readonly List<IEvent> _changeEvents;
 
