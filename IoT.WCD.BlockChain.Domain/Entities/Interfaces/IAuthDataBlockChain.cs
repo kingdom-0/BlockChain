@@ -2,15 +2,15 @@
 
 namespace IoT.WCD.BlockChain.Domain.Entities.Interfaces
 {
-    public interface IBlockChain: IEnumerable<IBlock>
+    public interface IAuthDataBlockChain: IEnumerable<IAuthDataBlock>
     {
         int Count { get; }
 
-        List<IBlock> Blocks { get; set; }
+        List<IAuthDataBlock> Blocks { get; set; }
 
         byte[] ProofOfWorkDifficulty { get; }
 
-        void Add(IBlock block);
+        void Add(IAuthDataBlock authDataBlock);
 
         bool IsValid();
     }

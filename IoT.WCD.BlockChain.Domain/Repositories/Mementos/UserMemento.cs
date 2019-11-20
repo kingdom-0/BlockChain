@@ -4,6 +4,7 @@ using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Domain.Repositories.Mementos
 {
+    [Serializable]
     public class UserMemento : Memento
     {
         public string Name { get; internal set; }

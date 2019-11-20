@@ -4,7 +4,7 @@ using IoT.WCD.BlockChain.Domain.AggregateRoots;
 
 namespace IoT.WCD.BlockChain.Domain.Entities.Interfaces
 {
-    public interface IBlock
+    public interface IAuthDataBlock
     {
         AuthorizationData Data { get; }
 
@@ -22,6 +22,6 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Interfaces
 
         bool HasValidHash();
 
-        bool HasValidPreviousHash(IBlock previousBlock);
+        bool HasValidPreviousHash(IAuthDataBlock previousAuthDataBlock);
     }
 }

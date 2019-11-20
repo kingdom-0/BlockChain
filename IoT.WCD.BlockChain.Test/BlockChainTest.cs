@@ -11,10 +11,10 @@ namespace IoT.WCD.BlockChain.Test
     [TestClass]
     public class BlockChainTest
     {
-        private static readonly IBlock GenesisBlock = new Block(AuthorizationData.Dummy);
+        private static readonly IAuthDataBlock GenesisAuthDataBlock = new AuthDataBlock(AuthorizationData.Dummy);
         private static readonly byte[] Difficulty = {0x00,0x00};
 
-        private readonly Domain.Entities.Impl.BlockChain _chain = new Domain.Entities.Impl.BlockChain(Difficulty,GenesisBlock);
+        private readonly AuthDataBlockChain _chain = new AuthDataBlockChain(Difficulty,GenesisAuthDataBlock);
 
         [TestMethod]
         public void TestBlockChainConstructor()
@@ -33,7 +33,7 @@ namespace IoT.WCD.BlockChain.Test
         {
             var authorizationData = new AuthorizationData(Guid.NewGuid(), Guid.Empty, "test key",
                 AuthorizationType.ReadAndWrite, DateTime.Now);
-            _chain.Add(new Block(authorizationData));
+            _chain.Add(new AuthDataBlock(authorizationData));
             Assert.AreEqual(2,_chain.Blocks.Count);
         }
 

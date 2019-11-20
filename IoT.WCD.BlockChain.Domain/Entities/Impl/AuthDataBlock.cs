@@ -8,16 +8,16 @@ using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
 
 namespace IoT.WCD.BlockChain.Domain.Entities.Impl
 {
-    public class Block:IBlock
+    public class AuthDataBlock : IAuthDataBlock
     {
-
-        public Block(AuthorizationData authorizationData)
+        public AuthDataBlock(AuthorizationData authorizationData)
         {
             Data = authorizationData ?? throw new ArgumentNullException(nameof(authorizationData));
             Nonce = 0;
-            PreviousHash = new List<byte>(){0x00};
+            PreviousHash = new List<byte>() {0x00};
             Timestamp = DateTime.Now;
         }
+
         public AuthorizationData Data { get; }
         public List<byte> Hash { get; set; }
         public int Nonce { get; set; }
@@ -26,7 +26,7 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Impl
 
         public List<byte> GenerateHash()
         {
-            var sha512 = new SHA256Managed();
+            var sha256 = new SHA256Managed();
             using (var stream = new MemoryStream())
             {
                 using (var writer = new BinaryWriter(stream))
@@ -36,7 +36,7 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Impl
                     writer.Write(Timestamp.ToBinary());
                     writer.Write(PreviousHash.ToArray());
                     var streamArray = stream.ToArray();
-                    return sha512.ComputeHash(streamArray).ToList();
+                    return sha256.ComputeHash(streamArray).ToList();
                 }
             }
         }
@@ -65,15 +65,15 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Impl
             return Hash.SequenceEqual(currentHash);
         }
 
-        public bool HasValidPreviousHash(IBlock previousBlock)
+        public bool HasValidPreviousHash(IAuthDataBlock previousAuthDataBlock)
         {
-            if (previousBlock == null)
+            if (previousAuthDataBlock == null)
             {
-                throw new ArgumentNullException(nameof(previousBlock));
+                throw new ArgumentNullException(nameof(previousAuthDataBlock));
             }
 
-            var previousBlockHash = previousBlock.GenerateHash();
-            return previousBlock.HasValidHash() && PreviousHash.SequenceEqual(previousBlockHash);
+            var previousBlockHash = previousAuthDataBlock.GenerateHash();
+            return previousAuthDataBlock.HasValidHash() && PreviousHash.SequenceEqual(previousBlockHash);
         }
 
         public override string ToString()

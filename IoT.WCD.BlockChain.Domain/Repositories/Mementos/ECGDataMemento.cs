@@ -3,6 +3,7 @@ using IoT.WCD.BlockChain.Repository.Mementos;
 
 namespace IoT.WCD.BlockChain.Domain.Repositories.Mementos
 {
+    [Serializable]
     public class ECGDataMemento : Memento
     {
         public Guid UserId { get; internal set; }

@@ -12,10 +12,10 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Storage
     public class InMemoryAuthDataStorage : IAuthDataStorage
     {
         private static readonly Random Random = new Random(DateTime.Now.Millisecond);
-        private static readonly IBlock GenesisBlock = new Block(AuthorizationData.Dummy);
+        private static readonly IAuthDataBlock GenesisAuthDataBlock = new AuthDataBlock(AuthorizationData.Dummy);
         private static readonly byte[] Difficulty = {0x00,0x00};
 
-        private readonly Entities.Impl.BlockChain _chain = new Entities.Impl.BlockChain(Difficulty,GenesisBlock);
+        private readonly Entities.Impl.AuthDataBlockChain _chain = new Entities.Impl.AuthDataBlockChain(Difficulty,GenesisAuthDataBlock);
 
         public InMemoryAuthDataStorage()
         {
@@ -33,7 +33,7 @@ namespace IoT.WCD.BlockChain.Domain.Repositories.Storage
             using (var ms = new MemoryStream())
             {
                 binaryFormatter.Serialize(ms, authorizationData);
-                var block = new Block(authorizationData);
+                var block = new AuthDataBlock(authorizationData);
                 _chain.Add(block);
             }
         }

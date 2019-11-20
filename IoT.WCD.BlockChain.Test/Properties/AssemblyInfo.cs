@@ -2,11 +2,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("IoT.WCD.BlockChain.Test")]
+[assembly: AssemblyTitle("IoT.WCD.AuthDataBlockChain.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IoT.WCD.BlockChain.Test")]
+[assembly: AssemblyProduct("IoT.WCD.AuthDataBlockChain.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

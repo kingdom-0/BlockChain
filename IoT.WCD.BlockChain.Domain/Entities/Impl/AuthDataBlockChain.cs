@@ -6,19 +6,19 @@ using IoT.WCD.BlockChain.Domain.Entities.Interfaces;
 
 namespace IoT.WCD.BlockChain.Domain.Entities.Impl
 {
-    public class BlockChain : IBlockChain
+    public class AuthDataBlockChain : IAuthDataBlockChain
     {
-        private List<IBlock> _blocks = new List<IBlock>();
+        private List<IAuthDataBlock> _blocks = new List<IAuthDataBlock>();
 
         public int Count => _blocks.Count;
 
-        public IBlock this[int index]
+        public IAuthDataBlock this[int index]
         {
             get => _blocks[index];
             set => _blocks[index] = value;
         }
 
-        public List<IBlock> Blocks
+        public List<IAuthDataBlock> Blocks
         {
             get => _blocks;
             set => _blocks = value;
@@ -26,22 +26,22 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Impl
 
         public byte[] ProofOfWorkDifficulty { get; }
 
-        public BlockChain(byte[] proofOfWorkDifficulty, IBlock genesisBlock)
+        public AuthDataBlockChain(byte[] proofOfWorkDifficulty, IAuthDataBlock genesisAuthDataBlock)
         {
             ProofOfWorkDifficulty = proofOfWorkDifficulty;
-            genesisBlock.Hash = genesisBlock.MineHash(ProofOfWorkDifficulty);
-            Blocks.Add(genesisBlock);
+            genesisAuthDataBlock.Hash = genesisAuthDataBlock.MineHash(ProofOfWorkDifficulty);
+            Blocks.Add(genesisAuthDataBlock);
         }
 
-        public void Add(IBlock block)
+        public void Add(IAuthDataBlock authDataBlock)
         {
             if (_blocks.LastOrDefault() != null)
             {
-                block.PreviousHash = _blocks.LastOrDefault()?.Hash;
+                authDataBlock.PreviousHash = _blocks.LastOrDefault()?.Hash;
             }
 
-            block.Hash = block.MineHash(ProofOfWorkDifficulty);
-            Blocks.Add(block);
+            authDataBlock.Hash = authDataBlock.MineHash(ProofOfWorkDifficulty);
+            Blocks.Add(authDataBlock);
         }
 
         public bool IsValid()
@@ -50,7 +50,7 @@ namespace IoT.WCD.BlockChain.Domain.Entities.Impl
                 .All(block => block.Item2.HasValidHash() && block.Item2.HasValidPreviousHash(block.Item1));
         }
 
-        public IEnumerator<IBlock> GetEnumerator()
+        public IEnumerator<IAuthDataBlock> GetEnumerator()
         {
             return _blocks.GetEnumerator();
         }
